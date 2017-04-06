@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Atendimento Bilac</string>
+    <string name="pin">PIN: </string>
+    <string name="editpin">Informe o PIN </string>
+</resources>

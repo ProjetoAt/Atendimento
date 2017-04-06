@@ -1,0 +1,28 @@
+Projeto Atendimento 
+Banco 
+
+Cliente
+id
+RA 
+Cpf 
+telefone
+e-mail
+
+Atendente 
+id
+nome
+login
+senha
+
+Questionario
+Tempo Espera (nota)
+Atendente
+Atendimento
+ProblemaResolvido
+Reclamação
+
+
+
+
+
+

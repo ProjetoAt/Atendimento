@@ -1,0 +1,185 @@
+@charset "UTF-8";
+
+body {
+	color: white;
+  background-color: #06080A;
+  font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.471; }
+
+.contato_container {
+  color: #73879C;
+  padding: 0; 
+}
+.col-md-55, .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px; }
+
+.interface{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-radius: 0 0 7px 7px;
+	background-color: #151719;
+}
+
+.menu{
+	background-color: #151719;
+}
+
+.interface-topo{
+	background-color: #3F82E8;
+	padding: 10px;
+	padding-bottom: 7px;
+	border-radius: 7px 7px 0 0;
+}
+
+.cor1{
+	background-color: #3F82E8;
+}
+
+.ULancamentos{
+	background-color: #fff;
+}
+.table-hover > tbody > tr:hover {
+	background-color: #0F1011;
+}
+	.btn-dark          { color: #ffffff; background-color: #0F1011; border-color: #555; }
+.btn-dark:hover, .btn-dark:focus, .btn-dark:active, .btn-dark.active, .open .dropdown-toggle.btn-dark
+                        { color: #ffffff; background-color: #0F1511; border-color: #444; }
+
+.align-center{
+	text-align: center;
+}
+
+table.carregar-aqui, th,td{
+	border:  1px solid !important;
+	border-left:  0px !important;
+	border-right:  0px !important;
+}
+
+table.carregar-aqui{
+	border-top: 0px;
+}
+.f-right{
+	display: block;
+	float: right: 
+}
+/* ---- */
+.navbar li:hover{
+	background-color: #202326;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a{
+	background-color: #0F1011;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus{
+	background-color: #0F1011;
+}
+
+.contato-block{
+  display: block;
+  padding: 10px 0 0;
+  background: #fff;
+
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+h2 {
+  font-size: 18px;
+  font-weight: 400; }
+
+a, a:visited, a:focus, a:active, :visited, :focus, :active, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+  outline: 0; }
+
+
+/** Contacts **/
+.profile_details:nth-child(3n) {
+  clear: both; }
+
+.profile_details .profile_view {
+  display: inline-block;
+  padding: 10px 0 0;
+  background: #fff; }
+
+.profile_details .profile_view .divider {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 5px;
+  margin-top: 5px; }
+
+.profile_details .profile_view .ratings {
+  margin-bottom: 0; }
+
+.profile_details .profile_view .bottom {
+  background: #F2F5F7;
+  padding: 9px 0;
+  border-top: 1px solid #E6E9ED; }
+
+.profile_details .profile_view .left {
+  margin-top: 20px; }
+
+.profile_details .profile_view .left p {
+  margin-bottom: 3px; }
+
+.profile_details .profile_view .right {
+  margin-top: 0px;
+  padding: 10px; }
+
+.profile_details .profile_view .img-circle {
+  border: 1px solid #E6E9ED;
+  padding: 2px; }
+
+.profile_details .profile_view h2 {
+  margin: 5px 0; }
+
+.profile_details .profile_view .ratings {
+  text-align: left;
+  font-size: 16px; }
+
+.profile_details .profile_view .brief {
+  margin: 0;
+  font-weight: 300; }
+
+.profile_details .profile_left {
+  background: white; }
+
+.pagination.pagination-split li {
+  display: inline-block;
+  margin-right: 3px; }
+
+.pagination.pagination-split li a {
+  border-radius: 4px;
+  color: #768399;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px; }
+
+/** Contacts **/
+
+
+.well .markup {
+  background: #fff;
+  color: #777;
+  position: relative;
+  padding: 45px 15px 15px;
+  margin: 15px 0 0 0;
+  background-color: #fff;
+  border-radius: 0 0 4px 4px;
+  box-shadow: none; }
+
+.well .markup::after {
+  content: "Example";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #bbb;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+  .left {
+  float: left; }

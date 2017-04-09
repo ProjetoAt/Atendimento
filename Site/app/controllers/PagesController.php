@@ -1,12 +1,9 @@
 <?php 
 
-	/**
-	* 
-	*/
 	namespace app\controllers;
 	
-	$title = "Nome do Titulo do Site";
-	$base = 'http://localhost/LOCALdaPASTA';
+	$title = "Projeto atendimento";
+	$base = 'http://localhost/Atendimento/Site/';
 
 	class PagesController{
 		function home($acao){

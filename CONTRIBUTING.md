@@ -9,3 +9,7 @@
 Depois seu **pull request** é mesclado
 
 Depois de mesclado, você ja pode deletar seu **branch** com segurança.
+
+## Regras
+
+Siga as regras do nosso [code style guide](https://github.com/ProjetoAt/Atendimento/blob/master/code-style-guide.md) antes de fazer uma contriibuição.

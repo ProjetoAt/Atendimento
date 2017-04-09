@@ -1,7 +1,8 @@
+	<footer class="footer">
+		<a class="footer__link" href="#">MIT License © Projeto Atendimento</a>
+	</footer>
 
-  	<script type="text/javascript" src="<?=$base ?>app/www/bootstrap/js/bootstrap.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="<?=$base ?>app/www/bootstrap/js/bootstrap.min.js"></script>
+	<script src="<?=$base ?>app/www/js/main.js"></script>
     
 </body>
 </html>

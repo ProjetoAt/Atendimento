@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+/* Layout da página
+======================================== */
+.layout {
+	display: flex;
+	flex-direction: column;
+	font-family: 'Open Sans', sans-serif;
+	height: 100vh;
+	justify-content: space-between;
+}
+
 /* Cabeçalho
 ======================================== */
 
@@ -16,7 +26,7 @@
 
 .nav__item {
 	color: #fff;	
-	font-family: 'Open Sans', sans-serif;
+	font-family: inherit;
 	font-size: 13px;
 	text-decoration: none;
 }
@@ -29,7 +39,7 @@
 	display: flex;
 	height: 100px;
 	padding-left: 50px;
-}
+}	
 
 .section-title__logo {
 	background-image: url('../images/logo.png');
@@ -38,12 +48,95 @@
 	width: 317px;
 }
 
-/* Conteúdo da página
+/* Painel
 ======================================== */
-.background {
-	background-color: #fff;
-	/* .nav: 40px .section-title: 100px .footer: 40px = 180px  */
-	height: calc(100vh - 180px);
+.panel {
+	background-color: #eee;
+	margin: 0 auto;
+	margin-top: -5%;
+	width: 450px;
+}
+
+/* Cabeçalho do painel
+==================== */
+.panel__header {
+	align-items: center;
+	background-color: rgb(181, 18, 27);
+	display: flex;
+	height: 40px;
+	padding: 0 20px;
+}
+
+.panel__title {
+	color: #fff;
+	font-family: inherit;
+	font-size: 18px;
+}
+
+/* Corpo do painel
+==================== */
+.panel__body {
+	padding: 20px;	
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+/* Imagem do painel
+==================== */
+.panel__image {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+/* Formuário do painel
+==================== */
+.panel__form {
+	display: flex;
+	flex-direction: column;
+}
+
+.panel__label--invisible {
+	display: none;
+}
+
+.panel__input {
+	background: none;
+	border: none;
+	color: rgb(113, 116, 127);
+	font-family: inherit;
+	font-size: 16px;
+	margin-bottom: 25px;
+}
+
+.panel__input:focus {
+	outline: thick;
+}
+
+.panel__input--line {
+	border-bottom: 1px solid rgb(113, 116, 127);
+	width: 100%;
+	max-width: 270px;
+	margin-left: auto;
+	margin-right: auto;
+	text-indent: 5px;
+}
+
+.panel__submit {
+	background-color: rgb(56, 58, 58);
+	border: none;
+	color: #fff;
+	font-family: inherit;
+	font-size: 16px;
+	height: 40px;
+	margin: auto;
+	width: 90px;
+}
+
+.panel__submit:hover {
+	background-color: rgb(66, 68, 68);
+	cursor: pointer;
 }
 
 /* Footer

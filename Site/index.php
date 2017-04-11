@@ -4,7 +4,7 @@
 
 	$controllerName = 'pagesController';
 	$acao = null;
-	$actionName = 'e404';
+    $actionName = 'e404';
 	//Instanciando o Controller
 	$controllerName = "app\\controllers\\".$controllerName ;
 	$controller = new  $controllerName;

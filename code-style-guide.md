@@ -16,7 +16,7 @@ Use soft-tabs com dois espaços:
 ```css
 /* bom */
 .btn {
-  color: #fff;
+    color: #fff;
 }
 
 /* ruim */

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,18 +12,18 @@
 	<link rel="icon"  href="<?=$base ?>app/www/images/favicon.ico">
 </head>
 <body>
-		
-<header>
-	<nav class="nav">
-		<ul>
-			<li><a class="nav__item" href="#">Login</a></li>
-		</ul>
-	</nav>
+<div class="layout">		
+	<header>
+		<nav class="nav">
+			<ul>
+				<li><a class="nav__item" href="#">Login</a></li>
+			</ul>
+		</nav>
 
-	<section class="section-title">
+		<section class="section-title">
 			<h1 class="section-title__logo">Faculdade Bilac</h1>
-	</section>	
-</header>
+		</section>	
+	</header>
 
-<?php include $centro; ?>
+	<?php include $centro; ?>
 	

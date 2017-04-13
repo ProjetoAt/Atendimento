@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:orientation="vertical"
-    android:background="#7d0000">
+    android:background="@android:color/background_light">
 
 
 
@@ -27,50 +28,47 @@
 
 
         <Button
-            android:layout_width="120px"
-            android:layout_height="120px"
+            android:layout_width="100px"
             android:id="@+id/tempo1"
-            android:background="@drawable/img1" />
-
-
-        <Button
-            android:layout_width="120px"
-            android:layout_height="120px"
-            android:id="@+id/tempo4"
-            android:background="@drawable/img4"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/tempo5"
-            android:layout_toRightOf="@+id/tempo3"
-            android:layout_toEndOf="@+id/tempo3" />
+            android:background="@drawable/img1"
+            android:layout_height="100px" />
 
         <Button
-            android:layout_width="120px"
-            android:layout_height="120px"
-            android:id="@+id/tempo3"
-            android:background="@drawable/img3"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/tempo2"
-            android:layout_toEndOf="@+id/tempo2" />
-
-        <Button
-            android:layout_width="120px"
-            android:layout_height="120px"
+            android:layout_width="100px"
             android:id="@+id/tempo2"
             android:background="@drawable/img2"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/tempo1"
-            android:layout_toEndOf="@+id/tempo1" />
+            android:layout_toEndOf="@+id/tempo1"
+            android:layout_height="100px" />
 
         <Button
-            android:layout_width="120px"
-            android:layout_height="120px"
+            android:layout_width="100px"
+            android:id="@+id/tempo3"
+            android:background="@drawable/img3"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tempo2"
+            android:layout_toEndOf="@+id/tempo2"
+            android:layout_height="100px" />
+
+        <Button
+            android:layout_width="100px"
+            android:id="@+id/tempo4"
+            android:background="@drawable/img4"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tempo3"
+            android:layout_toEndOf="@+id/tempo3"
+            android:layout_height="100px" />
+
+
+        <Button
+            android:layout_width="100px"
             android:id="@+id/tempo5"
             android:background="@drawable/img5"
             android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="49dp"
-            android:layout_marginEnd="49dp" />
+            android:layout_toRightOf="@+id/tempo4"
+            android:layout_toEndOf="@+id/tempo4"
+            android:layout_height="100px" />
 
 
     </RelativeLayout>
@@ -94,48 +92,47 @@
 
 
         <Button
-            android:layout_width="120px"
-            android:layout_height="120px"
+            android:layout_width="100px"
             android:id="@+id/atendente1"
             android:background="@drawable/img1"
-            />
+            android:layout_height="100px" />
 
         <Button
-            android:layout_width="120px"
-            android:layout_height="120px"
+            android:layout_width="100px"
             android:id="@+id/atendente2"
             android:background="@drawable/img2"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/atendente1"
-            android:layout_toEndOf="@+id/atendente1" />
+            android:layout_toEndOf="@+id/atendente1"
+            android:layout_height="100px" />
 
         <Button
-            android:layout_width="120px"
-            android:layout_height="120px"
+            android:layout_width="100px"
             android:id="@+id/atendente3"
             android:background="@drawable/img3"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/atendente2"
-            android:layout_toEndOf="@+id/atendente2" />
+            android:layout_toEndOf="@+id/atendente2"
+            android:layout_height="100px" />
 
         <Button
-            android:layout_width="120px"
-            android:layout_height="120px"
+            android:layout_width="100px"
             android:id="@+id/atendente4"
             android:background="@drawable/img4"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/atendente3"
-            android:layout_toEndOf="@+id/atendente3" />
+            android:layout_toEndOf="@+id/atendente3"
+            android:layout_height="100px" />
 
 
         <Button
-            android:layout_width="120px"
-            android:layout_height="120px"
+            android:layout_width="100px"
             android:id="@+id/atendente5"
             android:background="@drawable/img5"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/atendente4"
-            android:layout_toEndOf="@+id/atendente4" />
+            android:layout_toEndOf="@+id/atendente4"
+            android:layout_height="100px" />
 
 
     </RelativeLayout>
@@ -158,27 +155,33 @@
 
 
         <Button
-            android:layout_width="120px"
-            android:layout_height="120px"
-            android:id="@+id/problema2"
-            android:background="@drawable/img5"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="100dp"
-            android:layout_marginEnd="100dp" />
-
-        <Button
-            android:layout_width="120px"
-            android:layout_height="120px"
+            android:layout_width="100px"
             android:id="@+id/problema1"
             android:background="@drawable/img1"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/problema2"
-            android:layout_toStartOf="@+id/problema2"
-            android:layout_marginRight="64dp"
-            android:layout_marginEnd="64dp" />
+            android:layout_height="100px"
+             />
 
+        <Button
+            android:layout_width="100px"
+            android:id="@+id/problema2"
+            android:background="@drawable/img3"
+            android:layout_height="100px"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/problema1"
+            android:layout_toEndOf="@+id/problema1"
+            android:layout_marginLeft="92dp"
+            android:layout_marginStart="92dp" />
+
+        <Button
+            android:layout_width="100px"
+            android:id="@+id/problema3"
+            android:background="@drawable/img5"
+            android:layout_height="100px"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/problema2"
+            android:layout_toEndOf="@+id/problema2"
+            android:layout_marginLeft="92dp"
+            android:layout_marginStart="92dp" />
     </RelativeLayout>
 
 
@@ -191,11 +194,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/fim"
+            android:layout_marginLeft="86dp"
+            android:layout_marginStart="86dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginLeft="114dp"
-            android:layout_marginStart="114dp" />
+            android:layout_marginTop="17dp" />
     </RelativeLayout>
 
 

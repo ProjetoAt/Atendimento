@@ -17,8 +17,8 @@
         </activity>
         <activity
             android:name=".Questionario"
-            android:label="@string/questionario"
-            />
+            android:label="@string/questionario" />
+        <activity android:name=".Finish"></activity>
     </application>
 
 </manifest>

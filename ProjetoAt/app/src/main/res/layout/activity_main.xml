@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.br.projetoat.MainActivity"
-    android:background="#7d0000">
+    android:background="@android:color/background_light">
 
     <ImageView
         android:layout_width="match_parent"
@@ -34,26 +34,26 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/pin"
-        tools:textColor="@android:color/white"
+        tools:textColor="?android:attr/colorForeground"
         tools:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/editPing"
-        android:layout_toLeftOf="@+id/editPing"
+        android:layout_alignBottom="@+id/editPin"
+        android:layout_toLeftOf="@+id/editPin"
         android:layout_alignLeft="@+id/imageView2"
         android:layout_alignStart="@+id/imageView2"
         android:layout_marginLeft="19dp"
         android:layout_marginStart="19dp"
-        android:layout_alignTop="@+id/editPing"
+        android:layout_alignTop="@+id/editPin"
         android:layout_marginTop="13dp" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="phone"
         android:hint="@string/editpin"
         android:ems="10"
-        android:id="@+id/editPing"
-        android:textColor="@android:color/white"
-        tools:textColorHint="@android:color/white"
+        android:id="@+id/editPin"
+        android:textColor="?android:attr/colorForeground"
+        tools:textColorHint="?android:attr/colorForeground"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/imageView2"
         android:layout_alignEnd="@+id/imageView2"

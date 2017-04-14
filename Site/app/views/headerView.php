@@ -13,17 +13,20 @@
 </head>
 <body>
 <div class="layout">		
-	<header>
-		<nav class="nav">
-			<ul>
-				<li><a class="nav__item" href="#">Login</a></li>
-			</ul>
-		</nav>
+	<div class="layout__piece">
 
-		<section class="section-title">
-			<h1 class="section-title__logo">Faculdade Bilac</h1>
-		</section>	
-	</header>
+		<header>
+			<nav class="nav">
+				<ul>
+					<li><a class="nav__item" href="#">Login</a></li>
+				</ul>
+			</nav>
 
-	<?php include $centro; ?>
-	
+			<section class="section-title">
+				<h1 class="section-title__logo">Faculdade Bilac</h1>
+			</section>	
+		</header>
+
+		<?php include $centro; ?>
+		
+	</div>

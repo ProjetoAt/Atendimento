@@ -6,14 +6,23 @@
 	$base = 'http://localhost/Atendimento/Site/';
 
 	class PagesController{
-		function home($acao){
 
+		function home($acao){
 			$title = $GLOBALS["title"];
 			$base = $GLOBALS["base"] ;
 			//include 'app/dao/conexaoDao.php';
-			include 'app/controllers/HomeController.php';
+			include 'app/controllers/loginController.php';
 			include 'app/views/headerView.php';
-	        include 'app/views/footerView.php';
+	    include 'app/views/footerView.php';
+		}
+
+		function autentificacao($acao){
+			$title = $GLOBALS["title"];
+			$base = $GLOBALS["base"] ;
+			//include 'app/dao/conexaoDao.php';
+			include 'app/controllers/autentificacaoController.php';
+			include 'app/views/headerView.php';
+	    include 'app/views/footerView.php';
 		}
 
 		function statistics($acao){
@@ -22,14 +31,12 @@
 			$base = $GLOBALS["base"] ;
 			include 'app/controllers/StatisticsController.php';
 			include 'app/views/headerView.php';
-	        include 'app/views/footerView.php';
+	    include 'app/views/footerView.php';
 		}
-
 
 		function e404($acao){
 			print_r($acao);
 			echo "PAGINA NAO EXISTE";
-
 		}
 		
 	}

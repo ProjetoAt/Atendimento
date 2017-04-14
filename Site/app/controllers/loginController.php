@@ -1,6 +1,6 @@
 <?php 
 //---------------------------//
-$centro = "app/views/homeView.php";
+$centro = "app/views/loginView.php";
 
 //----------------------------------//
 

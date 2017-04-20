@@ -2,6 +2,7 @@
 
 /* Layout da página
 ======================================== */
+
 /* Para manter o footer sempre no final da página */
 .layout {
 	display: flex;
@@ -22,6 +23,7 @@
 
 /* Menu
 ==================== */
+
 /* barra de menu */
 .nav {
 	align-items: center;
@@ -45,6 +47,7 @@
 
 /* Seção de títulos
 ==================== */
+
 /* Barra da seão de titulo */
 .section-title {
 	align-items: center;
@@ -64,6 +67,7 @@
 
 /* Painel
 ======================================== */
+
 /* Painel padrão */
 .panel {
 	background-color: #eee;
@@ -106,6 +110,7 @@
 
 /* Formuário do painel
 ==================== */
+
 .panel__form {
 	display: flex;
 	flex-direction: column;
@@ -197,6 +202,7 @@
 
 /* Footer
 ======================================== */
+
 /* Barra de menu do footer */
 .footer {
 	align-items: center;

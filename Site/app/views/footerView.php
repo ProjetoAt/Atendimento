@@ -3,6 +3,6 @@
 	</footer>
 </div>
 <script src="<?=$base ?>app/www/js/main.js"></script>
-    
+  
 </body>
 </html>

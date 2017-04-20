@@ -12,8 +12,6 @@
 	<link rel="icon"  href="<?=$base ?>app/www/images/favicon.ico">
 </head>
 <body>
-<div class="layout">		
-	<div class="layout__piece">
 
 		<header>
 			<nav class="nav">
@@ -28,5 +26,3 @@
 		</header>
 
 		<?php include $centro; ?>
-		
-	</div>

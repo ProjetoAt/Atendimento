@@ -1,184 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
-/* Layout da página
+/* Base
 ======================================== */
-/* Para manter o footer sempre no final da página */
-.layout 
-	display flex
-	flex-direction column
-	font-family 'Open Sans', sans-serif
-	height auto
-	min-height 100vh
-	justify-content space-between
+@import "base/normalize"
+@import "base/colors"
+@import "base/global"
 
-/* Cabeçalho
+/* Layout
+======================================== */
+@import "layout/header"
+@import "layout/main"
+@import "layout/footer"
+
+/* Module
+======================================== */
+@import "module/form"
+@import "module/label"
+@import "module/input-text"
+@import "module/btn-submit"
+@import "module/btn-voltar"
+
+/* State
 ======================================== */
 
-/* Menu
-==================== */
-.nav 
-	align-items center
-	background-color rgb(181, 18, 27)
-	display flex
-	height 40px
-	justify-content flex-end
-	padding 0 50px
-
-.nav__item 
-	color #fff	
-	font-family inherit
-	font-size 13px
-	height 100%
-	text-decoration none
-}
-
-.nav__item:hover 
-	border-bottom 1px solid #fff 
-
-/* Seção de títulos
-==================== */
-.section-title 
-	align-items center
-	background-color #eee
-	display flex
-	height 100px
-	margin-bottom 50px
-	padding-left 50px
-}	
-
-.section-title__logo 
-	background-image url('../images/logo.png')
-	height 71px
-	text-indent -9999px
-	width 317px
-
-/* Painel
+/* Theme
 ======================================== */
-.panel 
-	background-color #eee
-	margin 0 auto
-	position relative
-	width 450px
 
-.panel__header 
-	align-items center
-	background-color rgb(181, 18, 27)
-	display flex
-	height 40px
-	padding 0 20px
-
-.panel__title 
-	color #fff
-	font-family inherit
-	font-size 18px
-
-.panel__body 
-	display flex
-	flex-direction column
-	justify-content space-around
-	padding 15px	
-	padding-bottom 0
-
-.panel__image 
-	display block
-	margin 0 auto
-	margin-bottom 15px
-
-/* Formuário do painel
-==================== */
-.panel__form 
-	display flex
-	flex-direction column
-
-.panel__label 
-	color rgb(72, 75, 77)
-	font-family inherit
-	margin-bottom 5px
-
-.panel__label--invisible 
-	display none 
-
-.panel__input 
-	background none
-	border 1px solid #ccc
-	color rgb(56, 58, 58)
-	font-family inherit
-	font-size 16px
-	margin-bottom 10px
-	min-height 22px
-	text-indent 5px
-
-.panel__input:focus 
-	outline thick
-
-.panel__input--line 
-	border none
-	border-bottom 1px solid rgb(113, 116, 127)
-	max-width 270px
-	margin-bottom 20px
-	margin-left auto
-	margin-right auto
-	width 100%
-
-.panel__input--bigger
-	font-size 34px
-	text-align center
-	text-indent 0
-
-.panel__input--alone 
-	margin-bottom 0
-
-.panel__input--last 
-	margin-bottom 0
-
-.panel__btn-main-action
-	align-items center
-	background-color rgb(56, 58, 58)
-	border none
-	color #fff
-	display flex
-	font-family inherit
-	font-size 16px
-	height 40px
-	justify-content center
-	margin 20px auto
-	width 90px
-
-.panel__btn-main-action:hover 
-	background-color rgb(66, 68, 68)
-	cursor pointer
-
-.panel__voltar 
-	background-image url("../images/btn-voltar.png")
-	height 32px
-	left -50px
-	overflow hidden
-	position absolute
-	text-indent -99999px
-	top 0
-	width 32px
-
-.panel__voltar:hover 
-	transform rotate(340deg)
-	cursor pointer
-
-/* Footer
-======================================== */
-.footer 
-	align-items center
-	background-color rgb(56, 58, 58)
-	display flex
-	height 40px
-	margin-top 50px
-	padding 0 50px
-
-.footer__link 
-	border-bottom 1px solid transparent
-	color #fff
-	font-family inherit
-	font-size 13px
-	text-decoration none
-
-.footer__link:hover 
-	border-bottom 1px solid #fff
 

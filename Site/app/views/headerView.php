@@ -12,17 +12,19 @@
 	<link rel="icon"  href="<?=$base ?>app/www/out/images/favicon.ico">
 </head>
 <body>
+	<div class="content">
+		<div class="content__container">			
+			<header class="header">
+				<nav class="nav">
+					<ul>
+						<li><a class="nav__item" href="#">Login</a></li>
+					</ul>
+				</nav>
 
-		<header>
-			<nav class="nav">
-				<ul>
-					<li><a class="nav__item" href="#">Login</a></li>
-				</ul>
-			</nav>
+				<section class="section-title">
+					<h1 class="section-title__logo">Faculdade Bilac</h1>
+				</section>	
+			</header>
 
-			<section class="section-title">
-				<h1 class="section-title__logo">Faculdade Bilac</h1>
-			</section>	
-		</header>
-
-		<?php include $centro; ?>
+			<?php include $centro; ?>
+		</div>

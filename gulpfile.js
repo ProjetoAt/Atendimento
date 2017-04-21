@@ -3,7 +3,9 @@ var stylus = require('gulp-stylus');
 
 gulp.task('stylus', function() {
 	gulp.src('./Site/app/www/src/stylus/style.styl')
-			.pipe(stylus())
+			.pipe(stylus({
+				compress: true
+			}))
 			.pipe(gulp.dest('./Site/app/www/out/css/'))
 })
 

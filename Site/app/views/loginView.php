@@ -5,7 +5,7 @@
 		</div>
 		<div class="panel-login__body">		
 			<figure>
-				<img class="panel-login__image" src="<?=$base?>app/www/images/foto-login.png" alt="">
+				<img class="panel-login__image" src="<?=$base?>app/www/out/images/foto-login.png" alt="">
 			</figure>
 			<form class="panel-login__form" action="">
 				<label class="panel-login__label" for="user">Usuário</label>

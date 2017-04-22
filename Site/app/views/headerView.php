@@ -7,7 +7,6 @@
 
 	<title><?= $title ?></title>
 	
-	<link rel="stylesheet" href="<?=$base ?>app/www/out/css/normalize.css">
 	<link rel="stylesheet" href="<?=$base ?>app/www/out/css/style.css">
 	<link rel="icon"  href="<?=$base ?>app/www/out/images/favicon.ico">
 </head>

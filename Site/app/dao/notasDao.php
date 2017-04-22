@@ -51,7 +51,7 @@ class notasDao{
 		$rs = $this->con->query("SELECT * FROM notas");
 		$rss = $rs->fetchAll(PDO::FETCH_OBJ);
 		foreach ($rss as $res) {
-			$nota = new clientesModel();
+			$nota = new notasModel();
 			$nota->setIdNota($res->id_nota);
 			$nota->setTempoEspera($res->nome);
 			$nota->setAtendente($res->email);
@@ -64,7 +64,7 @@ class notasDao{
 
 	public function buscarId($id){
 		//Consulta
-		$nota = new clientesModel();
+		$nota = new notasModel();
 		$rs = $this->con->prepare("SELECT * FROM notas where id_nota =:id");
 		$rs->bindValue(':id', $id, PDO::PARAM_INT);
 		$rs->execute();

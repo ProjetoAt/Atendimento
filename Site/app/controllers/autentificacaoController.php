@@ -18,6 +18,10 @@ if (isset($_POST['verificar'])) {
 }elseif(isset($_POST['finalizar'])) {
 	$etapa =1;
 	unset($_POST);
+}elseif(isset($_POST['voltar'])) {
+	$etapa = 1;
+
+	unset($_POST);
 }
 
 

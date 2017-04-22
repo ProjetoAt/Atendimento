@@ -44,7 +44,9 @@ if(isset($etapa) and $etapa == 1) { ?>
 
 				<input class="panel-data__submit" type="submit" name="enviar" value="Avançar">
 			</form>
-			<a class="panel-data__voltar">Voltar</a>
+			<form class="panel-data__form" method="POST">	
+				<input class="panel-data__voltar" type="submit" name="voltar" value="Finalizar">
+			</form>
 		</div>
 	</div>
 </main>
@@ -61,7 +63,7 @@ if(isset($etapa) and $etapa == 1) { ?>
 			<em class="panel-simple__input-text">4811</em>
 
 			<form class="panel-data__form" method="POST">	
-				<input class="panel-data__submit" type="submit" name="finalizar" value="Finalizar">
+				<input class="panel-data__submit" type="submit" name="finalizar">
 			</form>
 		</div>
 	</div>

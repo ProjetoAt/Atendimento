@@ -2,6 +2,13 @@
 
 class clientesModel{
 
+	private $id_cliente;
+	private $nome;
+	private $email;
+	private $telefone;
+	private $cpf;
+	private $ra;
+	private $data_cadastro;
 
     /**
      * Gets the value of id_cliente.

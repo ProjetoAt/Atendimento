@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" ng-app>
+<html lang="pt-br" ng-app="app">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,6 @@
 	
 	<link rel="stylesheet" href="<?=$base ?>app/www/out/css/style.css">
 	<link rel="icon"  href="<?=$base ?>app/www/out/images/favicon.ico">
-	<script src="<?=$base ?>app/www/out/js/script.min.js"></script>
 </head>
 <body>
 	<div class="content">

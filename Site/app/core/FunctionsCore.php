@@ -1,7 +1,7 @@
 <?php 
 
 
-	function TratamentoAmigavel($texto){
+function TratamentoAmigavel($texto){
     $de = array('Á','Í','Ó','Ú','É','Ä','Ï','Ö','Ü','Ë','À','Ì','Ò','Ù','È','Ã','Õ','Â','Î','Ô','Û','Ê','á','í','ó','ú','é','ä','ï','ö','ü','ë','à','ì','ò','ù','è','ã','õ','â','î','ô','û','ê','Ç','ç');
     $para = array('A','I','O','U','E','A','I','O','U','E','A','I','O','U','E','A','O','A','I','O','U','E','a','i','o','u','e','a','i','o','u','e','a','i','o','u','e','a','o','a','i','o','u','e','C','c');
 
@@ -37,4 +37,35 @@ function data($data,$formato=24){
 
 }
 
- ?>
+// ------------------------------GUIA---------------------------------- //
+//                Cria o hash da senha, usando MD5 e SHA-1              //
+// -------------------------------------------------------------------- //
+function make_hash($str){
+    return sha1(md5($str));
+}
+
+
+// ------------------------------GUIA---------------------------------- //
+//                    Verifica se o usuário está logado                 //
+// -------------------------------------------------------------------- //
+function isLoggedIn(){
+    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] != true){
+        return false;
+    }
+
+    return true;
+}
+
+// ------------------------------GUIA---------------------------------- //
+//             Verifica se o usuário tem nivel para acessar             //
+// -------------------------------------------------------------------- //
+function isPossible(){
+    if (isset($_SESSION['user_nivel']) and $_SESSION['user_nivel'] == 1){
+        return true;
+    }
+
+    return false;
+}
+
+
+?>

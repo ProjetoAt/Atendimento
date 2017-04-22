@@ -8,7 +8,7 @@ class conexaoDao{
        try {
           $db_driver = 'mysql';
           $db_host = '127.0.0.1';
-          $db_nome = 'bd_at';
+          $db_nome = 'db_at';
           $db_usuario = 'root';
           $db_senha = '';
           # Atribui o objeto PDO à variável $db.

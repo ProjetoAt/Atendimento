@@ -9,7 +9,7 @@
 	
 	<link rel="stylesheet" href="<?=$base ?>app/www/out/css/style.css">
 	<link rel="icon"  href="<?=$base ?>app/www/out/images/favicon.ico">
-	<script src="../../../node_modules/angular/angular.min.js"></script>
+	<script src="<?=$base ?>app/www/out/js/script.min.js"></script>
 </head>
 <body>
 	<div class="content">

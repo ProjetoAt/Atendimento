@@ -1,0 +1,78 @@
+.panel-data 
+	background-color $bg
+	margin 0 auto
+	position relative
+	width 450px
+
+.panel-data__header 
+	align-items center
+	background-color $primary
+	display flex
+	height 40px
+	padding 0 20px
+
+.panel-data__title 
+	color $bg
+	font-family inherit
+	font-size 18px
+
+.panel-data__body 
+	display flex
+	flex-direction column
+	justify-content space-around
+	padding 15px	
+
+.panel-data__form 
+	display flex
+	flex-direction column
+	
+.panel-data__label 
+	color $secondary
+	font-family inherit
+	margin-bottom 2px
+
+.panel-data__input-text
+	background none
+	border 1px solid $tertiary
+	color $secondary
+	font-family inherit
+	font-size 16px
+	margin-bottom 15px
+	min-height 22px
+	text-indent 5px
+	width 100%
+	opacity .8
+	
+.panel-data__input-text:focus 
+	outline thick
+
+.panel-data__submit
+	align-items center
+	background-color $secondary
+	border none
+	color $bg
+	display flex
+	font-family inherit
+	font-size 16px
+	height 40px
+	justify-content center
+	margin 0 auto
+	width 90px
+
+.panel-data__submit:hover 
+	opacity .9
+	cursor pointer
+	
+.panel-data__voltar 
+	background-image url("../images/btn-voltar.png")
+	height 32px
+	left -50px
+	overflow hidden
+	position absolute
+	text-indent -99999px
+	top 0
+	width 32px
+	
+.panel-data__voltar:hover 
+	transform rotate(340deg)
+	cursor pointer

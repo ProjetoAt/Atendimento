@@ -17,7 +17,13 @@
 			<header class="header">
 				<nav class="nav">
 					<ul>
-						<li><a class="nav__item" href="#">Login</a></li>
+						<?php 
+						if (session_status() == PHP_SESSION_ACTIVE and isLoggedIn()) {
+							echo '<li><a class="nav__item" href="#">'.$_SESSION['atendente_nome'].'</a></li>';
+						}else{
+							echo '<li><a class="nav__item" href="#">Login</a></li>';
+						}
+						?>
 					</ul>
 				</nav>
 

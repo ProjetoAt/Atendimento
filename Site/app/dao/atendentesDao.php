@@ -65,6 +65,28 @@ class atendentesDao{
 		return $atendentes;
 	}
 
+	public function buscarAllLogin($usuario,$senha){
+		//Consulta
+		$atendentes = new ArrayObject(); 
+		$rs = $this->con->prepare("SELECT * FROM atendentes WHERE usuario = :usuario and senha = :senha");
+		$rs->bindParam(':usuario', $usuario);
+		$rs->bindParam(':senha', $senha);
+		$rs->execute();
+		$rss = $rs->fetchAll(PDO::FETCH_OBJ);
+		foreach ($rss as $res) {
+			$atendente = new atendentesModel();
+			$atendente->setIdAtendente($res->id_atendente);
+			$atendente->setNome($res->nome);
+			$atendente->setUsuario($res->usuario);
+			$atendente->setSenha($res->senha);
+			$atendente->setNivel($res->nivel);
+			$atendente->setDataCadastro($res->data_cadastro);
+			$atendentes ->append($atendente);
+		}
+
+		return $atendentes;
+	}
+
 	public function buscarId($id){
 		//Consulta
 		$atendente = new atendentesModel();

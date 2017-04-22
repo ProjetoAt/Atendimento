@@ -2,12 +2,12 @@
 
 class atendentesModel{
 
-	public $id_atendente;
-	public $nome;
-	public $usuario;
-	public $senha;
-	public $nivel;
-	public $data_cadastro;
+	private $id_atendente;
+	private $nome;
+	private $usuario;
+	private $senha;
+	private $nivel;
+	private $data_cadastro;
 
     /**
      * Gets the value of id_atendente.

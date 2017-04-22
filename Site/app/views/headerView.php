@@ -7,26 +7,24 @@
 
 	<title><?= $title ?></title>
 	
-	<link rel="stylesheet" href="<?=$base ?>app/www/css/normalize.css">
-	<link rel="stylesheet" href="<?=$base ?>app/www/css/style.css">
-	<link rel="icon"  href="<?=$base ?>app/www/images/favicon.ico">
+	<link rel="stylesheet" href="<?=$base ?>app/www/out/css/normalize.css">
+	<link rel="stylesheet" href="<?=$base ?>app/www/out/css/style.css">
+	<link rel="icon"  href="<?=$base ?>app/www/out/images/favicon.ico">
 </head>
 <body>
-<div class="layout">		
-	<div class="layout__piece">
+	<div class="content">
+		<div class="content__container">			
+			<header class="header">
+				<nav class="nav">
+					<ul>
+						<li><a class="nav__item" href="#">Login</a></li>
+					</ul>
+				</nav>
 
-		<header>
-			<nav class="nav">
-				<ul>
-					<li><a class="nav__item" href="#">Login</a></li>
-				</ul>
-			</nav>
+				<section class="section-title">
+					<h1 class="section-title__logo">Faculdade Bilac</h1>
+				</section>	
+			</header>
 
-			<section class="section-title">
-				<h1 class="section-title__logo">Faculdade Bilac</h1>
-			</section>	
-		</header>
-
-		<?php include $centro; ?>
-		
-	</div>
+			<?php include $centro; ?>
+		</div>

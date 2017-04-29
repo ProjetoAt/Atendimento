@@ -29,11 +29,17 @@
 			$acao = explode('/', $acao);
 			$title = $GLOBALS["title"];
 			$base = $GLOBALS["base"] ;
-			include 'app/controllers/StatisticsController.php';
+			include 'app/controllers/statisticsController.php';
 			include 'app/views/headerView.php';
-	    include 'app/views/footerView.php';
+	    	include 'app/views/footerView.php';
 		}
 
+		function logout($acao){
+			$title = $GLOBALS["title"];
+			$base = $GLOBALS["base"] ;
+			include 'app/controllers/logoutController.php';
+		}
+		
 		function e404($acao){
 			print_r($acao);
 			echo "PAGINA NAO EXISTE";

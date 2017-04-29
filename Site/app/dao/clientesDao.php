@@ -58,8 +58,8 @@ class clientesDao{
 			$cliente = new clientesModel();
 			$cliente->setIdCliente($res->id_cliente);
 			$cliente->setNome($res->nome);
-			$cliente->setUsuario($res->email);
-			$cliente->setSenha($res->telefone);
+			$cliente->setEmail($res->email);
+			$cliente->setTelefone($res->telefone);
 			$cliente->setCpf($res->cpf);
 			$cliente->setRa($res->ra);
 			$cliente->setDataCadastro($res->data_cadastro);
@@ -79,8 +79,8 @@ class clientesDao{
 		if ($res) {
 			$cliente->setIdCliente($res->id_cliente);
 			$cliente->setNome($res->nome);
-			$cliente->setUsuario($res->email);
-			$cliente->setSenha($res->telefone);
+			$cliente->setEmail($res->email);
+			$cliente->setTelefone($res->telefone);
 			$cliente->setCpf($res->cpf);
 			$cliente->setRa($res->ra);
 			$cliente->setDataCadastro($res->data_cadastro);
@@ -92,6 +92,27 @@ class clientesDao{
 		return $cliente;
 	}
 
+
+	public function buscarCpf($cpf){
+		//Consulta
+		$cliente = new clientesModel();
+		$rs = $this->con->prepare("SELECT * FROM clientes where cpf =:cpf");
+		$rs->bindValue(':cpf', $cpf, PDO::PARAM_INT);
+		$rs->execute();
+		$res = $rs->fetch(PDO::FETCH_OBJ);
+		if ($res) {
+			$cliente->setIdCliente($res->id_cliente);
+			$cliente->setNome($res->nome);
+			$cliente->setEmail($res->email);
+			$cliente->setTelefone($res->telefone);
+			$cliente->setCpf($res->cpf);
+			$cliente->setRa($res->ra);
+			$cliente->setDataCadastro($res->data_cadastro);
+
+		}
+
+		return $cliente;
+	}
 
 
 }

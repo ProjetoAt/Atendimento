@@ -9,7 +9,7 @@ if(isset($etapa) and $etapa == 1) { ?>
 			<div class="panel-simple__body">		
 				<form class="panel-simple__form" method="POST">
 					<label class="panel-simple__label" for="cpf">CPF</label>
-					<input class="panel-simple__input-text" id="cpf" type="text" name="cpf" placeholder="CPF" <?= (isset($cpf)) ? 'value="'.$cpf.'"' : '' ;?> requerid>
+					<input class="panel-simple__input-text" id="cpf" type="text" name="cpf" placeholder="CPF" <?= (isset($cpf)) ? 'value="'.$cpf.'"' : '' ;?>>
 
 					<input class="panel-simple__submit" type="submit" name="verificar" value="Avançar">
 				</form>
@@ -27,19 +27,19 @@ if(isset($etapa) and $etapa == 1) { ?>
 			<div class="panel-data__body">		
 				<form class="panel-data__form" method="POST">				
 					<label class="panel-data__label" for="cpf">CPF</label>
-					<input class="panel-data__input-text" id="cpf" type="text" name="cpf" value="<?=$clientesModel->getCpf()?>" requerid>
+					<input class="panel-data__input-text" id="cpf" type="text" name="cpf" value="<?=$clientesModel->getCpf()?>">
 
 					<label class="panel-data__label" for="name">Nome</label>
-					<input class="panel-data__input-text" id="name" type="text" name="nome" value="<?=$clientesModel->getNome()?>" requerid>
+					<input class="panel-data__input-text" id="name" type="text" name="nome" value="<?=$clientesModel->getNome()?>">
 
 					<label class="panel-data__label" for="email">E-mail</label>
-					<input class="panel-data__input-text" id="email" type="email" name="email" value="<?=$clientesModel->getEmail()?>" requerid>
+					<input class="panel-data__input-text" id="email" type="email" name="email" value="<?=$clientesModel->getEmail()?>">
 
 					<label class="panel-data__label" for="tel">Telefone</label>
-					<input class="panel-data__input-text" id="tel" type="text" name="telefone" value="<?=$clientesModel->getTelefone()?>" requerid>
+					<input class="panel-data__input-text" id="tel" type="text" name="telefone" value="<?=$clientesModel->getTelefone()?>">
 
 					<label class="panel-data__label" for="ra">RA</label>
-					<input class="panel-data__input-text" id="ra" type="text" name="ra" value="<?=$clientesModel->getRa()?>" requerid>
+					<input class="panel-data__input-text" id="ra" type="text" name="ra" value="<?=$clientesModel->getRa()?>">
 
 					<input class="panel-data__submit" type="submit" name="enviar" value="Avançar">
 					<input class="panel-data__voltar" type="submit" name="voltar" value="Finalizar">

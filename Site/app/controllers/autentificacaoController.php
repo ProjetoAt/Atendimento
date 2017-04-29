@@ -12,13 +12,13 @@ if (isset($_POST['verificar'])) {
 	//Verificar se Existe No Banco
 	$cpf = (isset($_POST['cpf'])) ? $_POST['cpf'] : '' ;
 	$_SESSION['cliente_cpf'] = $cpf;
+	require_once 'app/dao/conexaoDao.php';
+	require_once 'app/dao/clientesDao.php';
+	$conexaoDao = new conexaoDao();
+	$con = $conexaoDao->conexao();
+	$clientesDao = new clientesDao($con);
+	$clientesModel = new clientesModel();
 	if ($cpf != '') {
-		require_once 'app/dao/conexaoDao.php';
-		require_once 'app/dao/clientesDao.php';
-		$conexaoDao = new conexaoDao();
-		$con = $conexaoDao->conexao();
-		$clientesDao = new clientesDao($con);
-		$clientesModel = new clientesModel();
 		$clientesModel = $clientesDao->buscarCPF($cpf);
 		if ($clientesModel->getNome() != '') {
 			//echo "completo";
@@ -34,24 +34,24 @@ if (isset($_POST['verificar'])) {
 	unset($_POST);
 }elseif(isset($_POST['enviar'])) {
 	$etapa = 3;
-		require_once 'app/dao/conexaoDao.php';
-		require_once 'app/dao/clientesDao.php';
-		$conexaoDao = new conexaoDao();
-		$con = $conexaoDao->conexao();
+	require_once 'app/dao/conexaoDao.php';
+	require_once 'app/dao/clientesDao.php';
+	$conexaoDao = new conexaoDao();
+	$con = $conexaoDao->conexao();
 
 
-		$clientesDao = new clientesDao($con);
-		$clientesModel = new clientesModel();
-		$nome = (isset($_POST['nome'])) ? $_POST['nome'] : '' ;
-		$email = (isset($_POST['email'])) ? $_POST['email'] : '' ;
-		$telefone = (isset($_POST['telefone'])) ? $_POST['telefone'] : '' ;
-		$cpf = (isset($_POST['cpf'])) ? $_POST['cpf'] : '' ;
-		$ra = (isset($_POST['ra'])) ? $_POST['ra'] : '' ;
+	$clientesDao = new clientesDao($con);
+	$clientesModel = new clientesModel();
+	$nome = (isset($_POST['nome'])) ? $_POST['nome'] : '' ;
+	$email = (isset($_POST['email'])) ? $_POST['email'] : '' ;
+	$telefone = (isset($_POST['telefone'])) ? $_POST['telefone'] : '' ;
+	$cpf = (isset($_POST['cpf'])) ? $_POST['cpf'] : '' ;
+	$ra = (isset($_POST['ra'])) ? $_POST['ra'] : '' ;
 		//
-		$clientesModel->setCpf($cpf);
-		$clientesModel->setNome($nome);
-		$clientesModel->setEmail($email);
-		$clientesModel->setTelefone($telefone);
+	$clientesModel->setCpf($cpf);
+	$clientesModel->setNome($nome);
+	$clientesModel->setEmail($email);
+	$clientesModel->setTelefone($telefone);
 		$clientesModel->setRa($ra); // Campo Opcional
 		if ($nome != '' and $email != '' and $telefone != '' and $cpf != '') {
 			if ($_SESSION['cliente_id'] != '') {
@@ -62,16 +62,16 @@ if (isset($_POST['verificar'])) {
 			}
 
 		}
-	unset($_POST);
-}elseif(isset($_POST['finalizar'])) {
-	$etapa =1;
-	
-	unset($_POST);
-}elseif(isset($_POST['voltar'])) {
-	$etapa = 1;
-	$cpf = (isset($_SESSION['cliente_cpf'])) ? $_SESSION['cliente_cpf'] : '' ;
-	unset($_POST);
-}
+		unset($_POST);
+	}elseif(isset($_POST['finalizar'])) {
+		$etapa =1;
+		
+		unset($_POST);
+	}elseif(isset($_POST['voltar'])) {
+		$etapa = 1;
+		$cpf = (isset($_SESSION['cliente_cpf'])) ? $_SESSION['cliente_cpf'] : '' ;
+		unset($_POST);
+	}
 
 
-?>
+	?>

@@ -7,10 +7,10 @@ class conexaoDao{
     public function conexao(){
        try {
           $db_driver = 'mysql';
-          $db_host = '127.0.0.1';
-          $db_nome = 'db_at';
-          $db_usuario = 'root';
-          $db_senha = '';
+          $db_host = '177.234.151.98';
+          $db_nome = 'centraln_atendimento';
+          $db_usuario = 'centraln_bilac';
+          $db_senha = 'DB[-_n!?xytk';
           # Atribui o objeto PDO à variável $db.
           $con = new PDO("$db_driver:host=$db_host; dbname=$db_nome", $db_usuario, $db_senha);
             # Garante que o PDO lance exceções durante erros.

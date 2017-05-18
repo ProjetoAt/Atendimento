@@ -22,16 +22,21 @@
 
 
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
 
 
         <Button
             android:layout_width="100px"
             android:id="@+id/tempo1"
             android:background="@drawable/img1"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginRight="10dp"
+            />
 
         <Button
             android:layout_width="100px"
@@ -40,7 +45,9 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/tempo1"
             android:layout_toEndOf="@+id/tempo1"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
         <Button
             android:layout_width="100px"
@@ -49,7 +56,9 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/tempo2"
             android:layout_toEndOf="@+id/tempo2"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
         <Button
             android:layout_width="100px"
@@ -58,7 +67,9 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/tempo3"
             android:layout_toEndOf="@+id/tempo3"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
 
         <Button
@@ -68,10 +79,11 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/tempo4"
             android:layout_toEndOf="@+id/tempo4"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginLeft="10dp"/>
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <!--Inicia o Atendente -->
     <TextView
@@ -86,16 +98,19 @@
         android:layout_alignEnd="@+id/tempo" />
 
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
 
 
         <Button
             android:layout_width="100px"
             android:id="@+id/atendente1"
             android:background="@drawable/img1"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginRight="10dp"/>
 
         <Button
             android:layout_width="100px"
@@ -104,7 +119,9 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/atendente1"
             android:layout_toEndOf="@+id/atendente1"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
         <Button
             android:layout_width="100px"
@@ -113,7 +130,9 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/atendente2"
             android:layout_toEndOf="@+id/atendente2"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
         <Button
             android:layout_width="100px"
@@ -122,7 +141,9 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/atendente3"
             android:layout_toEndOf="@+id/atendente3"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
 
         <Button
@@ -132,10 +153,11 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/atendente4"
             android:layout_toEndOf="@+id/atendente4"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginLeft="10dp" />
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
 <!-- Inicia o problema -->
     <TextView
@@ -149,9 +171,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center">
 
 
         <Button
@@ -169,8 +192,7 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/problema1"
             android:layout_toEndOf="@+id/problema1"
-            android:layout_marginLeft="92dp"
-            android:layout_marginStart="92dp" />
+            android:layout_marginLeft="80dp" />
 
         <Button
             android:layout_width="100px"
@@ -180,28 +202,37 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/problema2"
             android:layout_toEndOf="@+id/problema2"
-            android:layout_marginLeft="92dp"
-            android:layout_marginStart="92dp" />
-    </RelativeLayout>
+            android:layout_marginLeft="80dp"/>
+    </LinearLayout>
 
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center">
 
         <Button
             android:text="Fim"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/fim"
-            android:layout_marginLeft="86dp"
-            android:layout_marginStart="86dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="17dp" />
-    </RelativeLayout>
+            android:id="@+id/fim" />
+    </LinearLayout>
 
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/teste" />
 
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/teste2" />
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/teste3" />
 
 </LinearLayout>

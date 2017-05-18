@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight=".333333333">
+
+        <Button
+            android:layout_width="100px"
+            android:id="@+id/atendente1"
+            android:background="@drawable/img1"
+            android:layout_height="100px" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight=".333333333">
+
+        <Button
+            android:layout_width="100px"
+            android:id="@+id/atendente2"
+            android:background="@drawable/img2"
+            android:layout_height="100px" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight=".333333333">
+
+        <Button
+            android:layout_width="100px"
+            android:id="@+id/atendente3"
+            android:background="@drawable/img3"
+            android:layout_height="100px" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight=".333333333">
+
+        <Button
+            android:layout_width="100px"
+            android:id="@+id/atendente4"
+            android:background="@drawable/img4"
+            android:layout_height="100px" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight=".333333333">
+
+        <Button
+            android:layout_width="100px"
+            android:id="@+id/atendente5"
+            android:background="@drawable/img5"
+            android:layout_height="100px" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

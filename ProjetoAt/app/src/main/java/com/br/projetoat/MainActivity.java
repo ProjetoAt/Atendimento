@@ -26,14 +26,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText editPin = (EditText) findViewById(R.id.editPin);
-                Integer pin = Integer.parseInt(editPin.getText().toString());
-                Intent intent = new Intent( getContext(),Questionario.class);
-                Bundle params = new Bundle();
-                params.putInt("pin",pin);
-                intent.putExtras(params);
-                startActivity(intent);
-
-
+                String valida = editPin.getText().toString();
+                if(valida.length() == 0){
+                    editPin.setError("Preenchimento obrigatório!");
+                    editPin.setFocusable(true);
+                }else{
+                    Integer pin = Integer.parseInt(editPin.getText().toString());
+                    Intent intent = new Intent( getContext(),Questionario.class);
+                    Bundle params = new Bundle();
+                    params.putInt("pin",pin);
+                    intent.putExtras(params);
+                    startActivity(intent);
+                }
             }
         };
     }

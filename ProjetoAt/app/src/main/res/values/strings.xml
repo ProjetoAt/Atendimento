@@ -8,5 +8,6 @@
     <string name="tempo">Tempo Espera </string>
     <string name="atendente">Atendente </string>
     <string name="problema">Problema Resolvido </string>
-    <string name="msg"> Obrigado !</string>
+    <string name="msg"> Obrigado(a)!</string>
+    <string name="snotas">Suas notas:</string>
 </resources>

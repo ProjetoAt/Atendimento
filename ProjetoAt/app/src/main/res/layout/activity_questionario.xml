@@ -10,16 +10,18 @@
 
 
 
+
     <TextView
         android:text="@string/tempo"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:id="@+id/tempo"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
+        android:layout_alignParentStart="true"
+        android:textSize="25dp"
+        android:textColor="@color/colorAccent" />
 
 
     <LinearLayout
@@ -95,7 +97,9 @@
         android:id="@+id/atendente"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/tempo"
-        android:layout_alignEnd="@+id/tempo" />
+        android:layout_alignEnd="@+id/tempo"
+        android:textSize="25dp"
+        android:textColor="@color/colorAccent" />
 
 
     <LinearLayout
@@ -169,7 +173,9 @@
         android:id="@+id/problema"
         android:layout_below="@+id/atendente"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="25dp"
+        android:textColor="@color/colorAccent"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -215,14 +221,17 @@
             android:text="Fim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/fim" />
+            android:id="@+id/fim"
+            android:textSize="25dp"/>
     </LinearLayout>
+
 
     <TextView
         android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/teste" />
+        android:id="@+id/teste"
+        />
 
     <TextView
         android:text="TextView"

@@ -211,6 +211,65 @@
             android:layout_marginLeft="80dp"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="90dp">
+        <TextView
+            android:id="@+id/suasnotas"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:text="@string/snotas"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/txttempo"
+            android:layout_width="wrap_content"
+            android:layout_height="100px"
+            android:text="Tempo: "
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/teste"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_marginRight="10dp"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/txtatendente"
+            android:layout_width="wrap_content"
+            android:layout_height="100px"
+            android:text="Atendente: "
+            android:gravity="center"/>
+        <TextView
+            android:text=""
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_marginRight="10dp"
+            android:id="@+id/teste2" />
+        <TextView
+            android:id="@+id/txtresol"
+            android:layout_width="wrap_content"
+            android:layout_height="100px"
+            android:text="Resolução: "
+            android:gravity="center"/>
+        <TextView
+            android:text=""
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:id="@+id/teste3" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -218,30 +277,16 @@
         android:gravity="center">
 
         <Button
-            android:text="Fim"
+            android:id="@+id/fim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/fim"
-            android:textSize="25dp"/>
+            android:text="Fim"
+            android:textSize="25dp" />
     </LinearLayout>
 
+    <!--
+    -->
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/teste"
-        />
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/teste2" />
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/teste3" />
 
 </LinearLayout>

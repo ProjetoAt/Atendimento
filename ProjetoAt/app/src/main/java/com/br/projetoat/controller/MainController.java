@@ -17,24 +17,23 @@ public class MainController {
         connection = Conexao.getConnection();
     }
 
-    public ModelMain validarPIN(int pin){
+    public void validarPIN(int pin){
 
         ModelMain m = new ModelMain();
 
         try{
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM atendimentos WHERE codigo=?");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM clientes WHERE ra=?");
 
             preparedStatement.setInt(1, pin);
 
             ResultSet rs = preparedStatement.executeQuery();
 
             if(rs.next()){
-                m.setPin(rs.getInt("codigo"));
+                m.setPin(rs.getInt("ra"));
             }
 
         }catch (SQLException e){
             e.printStackTrace();
         }
-        return m;
     }
 }

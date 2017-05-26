@@ -9,10 +9,11 @@ public class Conexao {
 
     private static Connection connection = null;
     private static String host = "177.234.151.98";
-    private static String port = "3036";
+    private static String port = "3306";
     private static String system = "centraln_atendimento";
     private static String user = "centraln_bilac";
     private static String pass = "DB[-_n!?xytk";
+    private static java.sql.Statement stmt;
 
     public static Connection getConnection(){
         if(connection != null)
@@ -23,8 +24,9 @@ public class Conexao {
                 connection = DriverManager.getConnection("jdbc:mysql://"
                         +host+":"
                         +port+"/"
-                        +system+"/",user,pass);
-
+                        +system+"/"
+                        ,user,pass);
+                stmt = connection.createStatement();
 
             }catch (SQLException ex){
             }catch (Exception e){

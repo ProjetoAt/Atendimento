@@ -63,7 +63,9 @@
             android:textColor="?android:attr/colorForeground"
             android:textSize="25dp"
             android:maxLength="9"
-            tools:textColorHint="?android:attr/colorForeground" />
+            tools:textColorHint="?android:attr/colorForeground">
+            <requestFocus/>
+        </EditText>
     </LinearLayout>
 
 

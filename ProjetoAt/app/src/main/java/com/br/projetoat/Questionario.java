@@ -3,6 +3,9 @@ package com.br.projetoat;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,7 +20,7 @@ public class Questionario extends AppCompatActivity {
     Button bttempo1,bttempo2,bttempo3,bttempo4,bttempo5;
     Button btate1,btate2,btate3,btate4,btate5;
     Button res1,res2,res3;
-    int notaTempo=0, notaAte=0,notaResolvido=0;
+    int notaTempo=-1, notaAte=-1,notaResolvido=-1;
     TextView teste,teste2,teste3;
 
     @Override
@@ -42,38 +45,35 @@ public class Questionario extends AppCompatActivity {
         bttempo1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Tempo(1);
-
+                Tempo(0);
             }
         });
 
         bttempo2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Tempo(2);
+                Tempo(1);
             }
         });
 
         bttempo3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Tempo(3);
+                Tempo(2);
             }
         });
 
         bttempo4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Tempo(4);
+                Tempo(3);
             }
         });
 
         bttempo5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Tempo(5);
+                Tempo(4);
             }
         });
 
@@ -93,35 +93,35 @@ public class Questionario extends AppCompatActivity {
         btate1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Atendente(1);
+                Atendente(0);
             }
         });
 
         btate2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Atendente(2);
+                Atendente(1);
             }
         });
 
         btate3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Atendente(3);
+                Atendente(2);
             }
         });
 
         btate4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Atendente(4);
+                Atendente(3);
             }
         });
 
         btate5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Atendente(5);
+                Atendente(4);
             }
         });
 
@@ -136,7 +136,7 @@ public class Questionario extends AppCompatActivity {
         res1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Resolvido(1);
+                Resolvido(0);
             }
         });
 
@@ -150,7 +150,7 @@ public class Questionario extends AppCompatActivity {
         res3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Resolvido(3);
+                Resolvido(4);
             }
         });
 
@@ -173,23 +173,54 @@ public class Questionario extends AppCompatActivity {
 
         notaTempo = t;
 
+        //As notas são trazidas de um array chamado notas no array.xml
+        Resources res = getResources();
+        TypedArray icons = res.obtainTypedArray(R.array.notas);
 
-        teste.setText(Integer.toString(notaTempo));
+        //Desenha a nota de acordo com index passado pelo botão pressionado
+        Drawable img = icons.getDrawable(t);
+        img.setBounds( 0, 0, 100, 100);
+
+        //Set pro textView a nota
+        teste.setCompoundDrawables( img, null, null, null );
+
+        //teste.setText(Integer.toString(notaTempo));
 
     }
 
     public void Atendente(int v){
 
         notaAte = v;
+        //As notas são trazidas de um array chamado notas no array.xml
+        Resources res = getResources();
+        TypedArray icons = res.obtainTypedArray(R.array.notas);
 
-        teste2.setText(Integer.toString(notaAte));
+        //Desenha a nota de acordo com index passado pelo botão pressionado
+        Drawable img = icons.getDrawable(v);
+        img.setBounds( 0, 0, 100, 100);
+
+        //Set pro textView a nota
+        teste2.setCompoundDrawables( img, null, null, null );
+
+       // teste2.setText(Integer.toString(notaAte));
     }
 
     public void Resolvido(int v){
 
         notaResolvido = v;
-        teste3.setText(Integer.toString(notaResolvido));
-        return;
+
+        //As notas são trazidas de um array chamado notas no array.xml
+        Resources res = getResources();
+        TypedArray icons = res.obtainTypedArray(R.array.notas);
+
+        //Desenha a nota de acordo com index passado pelo botão pressionado
+        Drawable img = icons.getDrawable(v);
+        img.setBounds( 0, 0, 100, 100);
+
+        //Set pro textView a nota
+        teste3.setCompoundDrawables( img, null, null, null );
+
+        //teste3.setText(Integer.toString(notaResolvido));
     }
 
 
@@ -201,7 +232,7 @@ public class Questionario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(notaTempo==0||notaAte==0||notaResolvido==0){
+                if(notaTempo==-1||notaAte==-1||notaResolvido==-1){
 
                     AlertDialog.Builder dialog = new AlertDialog.Builder(Questionario.this);
                     dialog.setTitle("Atenção");

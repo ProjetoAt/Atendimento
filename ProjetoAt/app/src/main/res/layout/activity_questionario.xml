@@ -10,28 +10,36 @@
 
 
 
+
     <TextView
         android:text="@string/tempo"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="15dp"
         android:id="@+id/tempo"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="25dp"
+        android:textColor="@color/colorAccent" />
 
 
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        >
 
 
         <Button
             android:layout_width="100px"
             android:id="@+id/tempo1"
             android:background="@drawable/img1"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginRight="10dp"
+            />
 
         <Button
             android:layout_width="100px"
@@ -40,7 +48,9 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/tempo1"
             android:layout_toEndOf="@+id/tempo1"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
         <Button
             android:layout_width="100px"
@@ -49,7 +59,9 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/tempo2"
             android:layout_toEndOf="@+id/tempo2"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
         <Button
             android:layout_width="100px"
@@ -58,7 +70,9 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/tempo3"
             android:layout_toEndOf="@+id/tempo3"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
 
         <Button
@@ -68,10 +82,11 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/tempo4"
             android:layout_toEndOf="@+id/tempo4"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginLeft="10dp"/>
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <!--Inicia o Atendente -->
     <TextView
@@ -79,23 +94,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="15dp"
         android:id="@+id/atendente"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/tempo"
-        android:layout_alignEnd="@+id/tempo" />
+        android:layout_alignEnd="@+id/tempo"
+        android:textSize="25dp"
+        android:textColor="@color/colorAccent" />
 
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        >
 
 
         <Button
             android:layout_width="100px"
             android:id="@+id/atendente1"
             android:background="@drawable/img1"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginRight="10dp"/>
 
         <Button
             android:layout_width="100px"
@@ -104,7 +125,9 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/atendente1"
             android:layout_toEndOf="@+id/atendente1"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
         <Button
             android:layout_width="100px"
@@ -113,7 +136,9 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/atendente2"
             android:layout_toEndOf="@+id/atendente2"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
         <Button
             android:layout_width="100px"
@@ -122,7 +147,9 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/atendente3"
             android:layout_toEndOf="@+id/atendente3"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
 
         <Button
@@ -132,10 +159,11 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/atendente4"
             android:layout_toEndOf="@+id/atendente4"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_marginLeft="10dp" />
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
 <!-- Inicia o problema -->
     <TextView
@@ -143,15 +171,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="15dp"
         android:id="@+id/problema"
         android:layout_below="@+id/atendente"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="25dp"
+        android:textColor="@color/colorAccent"/>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="20dp">
 
 
         <Button
@@ -169,8 +201,7 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/problema1"
             android:layout_toEndOf="@+id/problema1"
-            android:layout_marginLeft="92dp"
-            android:layout_marginStart="92dp" />
+            android:layout_marginLeft="80dp" />
 
         <Button
             android:layout_width="100px"
@@ -180,27 +211,85 @@
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/problema2"
             android:layout_toEndOf="@+id/problema2"
-            android:layout_marginLeft="92dp"
-            android:layout_marginStart="92dp" />
-    </RelativeLayout>
+            android:layout_marginLeft="80dp"/>
+    </LinearLayout>
 
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="50dp">
+        <TextView
+            android:id="@+id/suasnotas"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:text="@string/snotas"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/txttempo"
+            android:layout_width="wrap_content"
+            android:layout_height="100px"
+            android:text="Tempo: "
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/teste"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_marginRight="10dp"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/txtatendente"
+            android:layout_width="wrap_content"
+            android:layout_height="100px"
+            android:text="Atendente: "
+            android:gravity="center"/>
+        <TextView
+            android:text=""
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_marginRight="10dp"
+            android:id="@+id/teste2" />
+        <TextView
+            android:id="@+id/txtresol"
+            android:layout_width="wrap_content"
+            android:layout_height="100px"
+            android:text="Resolução: "
+            android:gravity="center"/>
+        <TextView
+            android:text=""
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:id="@+id/teste3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
 
         <Button
-            android:text="Fim"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/fim"
-            android:layout_marginLeft="86dp"
-            android:layout_marginStart="86dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="17dp" />
-    </RelativeLayout>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fim"
+            android:textSize="25dp"
+            android:theme="@style/AppTheme.Button"/>
+    </LinearLayout>
+
+    <!--
+    -->
 
 
 

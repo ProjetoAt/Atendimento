@@ -1,2 +1,29 @@
 node_modules/
 npm-debug.log
+
+#built arquivos de aplicativos 
+*.apk
+*.ap_
+
+# Aruqivos para o VM dex
+*.dex
+
+# Arquivos de classe Java
+*.class
+
+# Arquivos gerados
+bin/
+gen/
+
+# Arquivos de configuração local (sdk path, etc)
+local.properties
+
+# Android Studio
+*.iml
+.idea
+#.idea/workspace.xml - remove # and delete .idea if it better suit your needs.
+.gradle
+build/
+
+#NDK
+obj/

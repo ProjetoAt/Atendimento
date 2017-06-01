@@ -19,3 +19,5 @@
 		</div>
 	</div>
 </main>
+
+<script src="<?=$base ?>app/www/out/js/base.min.js"></script>

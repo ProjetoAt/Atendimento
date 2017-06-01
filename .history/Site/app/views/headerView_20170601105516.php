@@ -7,8 +7,9 @@
 
 	<title><?= $title ?></title>
 	
-	<?php if (isset($folhaEstilo)): ?>
-		<link rel="stylesheet" href="<?=$base ?>app/www/out/css/<?=$folhaEstilo?>">
+	<link rel="stylesheet" href="<?=$base ?>app/www/out/css/style.css">
+	<?php if (isset($css2)): ?>
+		<link rel="stylesheet" href="<?=$base ?>app/www/out/css/<?=$css2?>">
 	<?php endif; ?>
 	<link rel="icon"  href="<?=$base ?>app/www/out/images/favicon.ico">
 </head>

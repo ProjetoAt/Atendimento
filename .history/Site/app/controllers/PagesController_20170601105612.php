@@ -46,7 +46,6 @@
 		
 		function e404($acao){
 			print_r($acao);
-			$folhaEstilo = '';
 			echo "PAGINA NAO EXISTE";
 		}
 		

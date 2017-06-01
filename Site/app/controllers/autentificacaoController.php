@@ -1,4 +1,4 @@
-<?php 
+<?php
 //---------------------------//
 $centro = "app/views/autentificacaoView.php";
 
@@ -56,9 +56,19 @@ if (isset($_POST['verificar'])) {
 		if ($nome != '' and $email != '' and $telefone != '' and $cpf != '') {
 			if ($_SESSION['cliente_id'] != '') {
 				$clientesModel->setIdCliente($_SESSION['cliente_id'] );
-				echo $clientesDao->alterarAtendente($clientesModel);
+				$clientesDao->alterarAtendente($clientesModel);
 			}else{
-				echo $clientesDao->adicionarCliente($clientesModel);
+				$clientesDao->adicionarAtendimento($clientesModel);
+			}
+			if ($result['error'] != null) {
+				$atendimentosDao = new atendimentosDao($con);
+				$atendimentosModel = new atendimentosModel();
+				$atendimentosModel->setAtendenteId($_SESSION['atendente_id']);
+				$atendimentosModel->setClienteId($_SESSION['cliente_id']);
+				$atendimentosModel->setCodigo(rand(0,999999));
+				$atendimentosModel->setPreenchido(0);
+				$atendimentosDao->adicioanr
+
 			}
 
 		}

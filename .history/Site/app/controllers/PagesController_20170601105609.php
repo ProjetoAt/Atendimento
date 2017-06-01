@@ -40,13 +40,11 @@
 		function logout($acao){
 			$title = $GLOBALS["title"];
 			$base = $GLOBALS["base"] ;
-			$folhaEstilo = '';
 			include 'app/controllers/logoutController.php';
 		}
 		
 		function e404($acao){
 			print_r($acao);
-			$folhaEstilo = '';
 			echo "PAGINA NAO EXISTE";
 		}
 		

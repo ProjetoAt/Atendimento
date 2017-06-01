@@ -12,16 +12,14 @@ class atendimentosDao{
 
 	public function adicionarAtendimento($atendimento){
 		try {
-			$stmt = $this->con->prepare("INSERT INTO atendimentos(atendente_id,cliente_id,nota_id,codigo,preenchido,reclamacao) VALUES(?,?,?,?,?,?)");
+			$stmt = $this->con->prepare("INSERT INTO atendimentos(atendente_id,cliente_id,codigo,preenchido) VALUES(?,?,?,?)");
 			$stmt->bindValue(1,$atendimento->getAtendenteId());
 			$stmt->bindValue(2,$atendimento->getClienteId());
-			$stmt->bindValue(3,$atendimento->getNotaId());
-			$stmt->bindValue(4,$atendimento->getCodigo());
-			$stmt->bindValue(5,$atendimento->getPreenchido());
-			$stmt->bindValue(6,$atendimento->getReclamacao());
+			$stmt->bindValue(3,$atendimento->getCodigo());
+			$stmt->bindValue(4,$atendimento->getPreenchido());
 			$stmt->execute();
 		}catch (PDOException $e) {
-			return $e;
+			echo $e;
 		}
 	}
 

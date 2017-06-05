@@ -1,6 +1,5 @@
 package com.br.projetoat;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -10,20 +9,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.br.projetoat.controller.MainController;
 import com.br.projetoat.dao.Configuracao;
 import com.br.projetoat.dao.RequestHandler;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.concurrent.ExecutionException;
-
-import static java.security.AccessController.getContext;
 
 public class MainActivity extends AppCompatActivity{
 

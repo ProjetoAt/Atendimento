@@ -1,14 +1,14 @@
 <?php
 
 	//Pegando o pin
-	$codigo = $_GET['id']; //Trocar para 'codigo' quando acabar o teste
-
+	$codigo = $_GET['id']; 
+	
 	//Importando banco de dados
 	require_once('Conexao.php');
 
 	//Criando sql
-	$sql = "select * from atendimentos where codigo=$codigo and preenchido=0"; //trocar clientes por atendimento e ra por codigo
-
+	$sql = "select * from atendimentos where codigo=$codigo and preenchido=0"; 
+	
 	//pegando resultado
 	$r = mysqli_query($con,$sql);
 

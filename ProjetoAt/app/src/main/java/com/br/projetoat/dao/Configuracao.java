@@ -16,7 +16,7 @@ public class Configuracao {
 
     //Tags JSON
     public static final String TAG_JSON_ARRAY = "result";
-    public static final String TAG_ID = "ra";
+    public static final String TAG_ID = "codigo";
     public static final String TAG_NOTA_ATENDIMENTO = "atendente";
     public static final String TAG_NOTA_TEMPO = "tempo_espera";
     public static final String TAG_NOTA_PROBLEMA = "problema_resolvido";

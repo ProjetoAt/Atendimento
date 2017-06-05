@@ -7,7 +7,7 @@
 	require_once('Conexao.php');
 
 	//Criando sql
-	$sql = "select * from atendimento where codigo=$codigo and preenchido = 0"; //trocar clientes por atendimento e ra por codigo
+	$sql = "select * from atendimentos where codigo=$codigo and preenchido=0"; //trocar clientes por atendimento e ra por codigo
 
 	//pegando resultado
 	$r = mysqli_query($con,$sql);

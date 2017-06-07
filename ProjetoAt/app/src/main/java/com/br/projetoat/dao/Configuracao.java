@@ -6,7 +6,7 @@ public class Configuracao {
 
     //Endereços dos scripts para fazer o CRUD
     public static final String URL_VALIDAR_PIN = host+"validarpin.php?id=";
-    public static final String URL_ADICIONAR_NOTA = host+"adicionarnota.php?id=";
+    public static final String URL_ADICIONAR_NOTA = host+"adicionarnota.php";
 
     //Constantes chaves que serao utilizados para enviar dados para os scripts php
     public static final String KEY_PIN = "id";

@@ -1,18 +1,24 @@
 package com.br.projetoat;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.IntegerRes;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.br.projetoat.dao.Configuracao;
+import com.br.projetoat.dao.RequestHandler;
+
+import java.util.HashMap;
 
 public class Questionario extends AppCompatActivity {
 
@@ -20,8 +26,8 @@ public class Questionario extends AppCompatActivity {
     Button bttempo1,bttempo2,bttempo3,bttempo4,bttempo5;
     Button btate1,btate2,btate3,btate4,btate5;
     Button res1,res2,res3;
-    int notaTempo=-1, notaAte=-1,notaResolvido=-1;
-    TextView teste,teste2,teste3;
+    int atendimento = 0, tempo_espera = 0, problema_resolvido = 0;
+    TextView txtTempo, txtAtendimento, txtProblema;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +42,10 @@ public class Questionario extends AppCompatActivity {
         bttempo4 = (Button) findViewById(R.id.tempo4);
         bttempo5 = (Button) findViewById(R.id.tempo5);
 
-        //Campo usado para teste
-        teste = (TextView)findViewById(R.id.teste);
-        teste2 = (TextView)findViewById(R.id.teste2);
-        teste3 = (TextView)findViewById(R.id.teste3);
+        //Campo usado para mostrar as notas votadas
+        txtTempo = (TextView)findViewById(R.id.txtTempoGIF);
+        txtAtendimento = (TextView)findViewById(R.id.txtAtendenteGIF);
+        txtProblema = (TextView)findViewById(R.id.txtResolGIF);
 
 
         bttempo1.setOnClickListener(new View.OnClickListener() {
@@ -169,28 +175,32 @@ public class Questionario extends AppCompatActivity {
 
 
     //Metodo Tempo Recebe a nota
-    public void Tempo(int t){
-
-        notaTempo = t;
+    public void Tempo(int v){
+        //Dando valor para a variável que irá para o BD +1 (array inicial é 0 por isso +1)
+        //Validação de votos
+        tempo_espera = (v+1);
 
         //As notas são trazidas de um array chamado notas no array.xml
         Resources res = getResources();
         TypedArray icons = res.obtainTypedArray(R.array.notas);
 
         //Desenha a nota de acordo com index passado pelo botão pressionado
-        Drawable img = icons.getDrawable(t);
+        Drawable img = icons.getDrawable(v);
         img.setBounds( 0, 0, 100, 100);
 
         //Set pro textView a nota
-        teste.setCompoundDrawables( img, null, null, null );
+        txtTempo.setCompoundDrawables( img, null, null, null );
 
-        //teste.setText(Integer.toString(notaTempo));
+        //txtTempo.setText(Integer.toString(notaTempo));
 
     }
 
     public void Atendente(int v){
 
-        notaAte = v;
+        //Dando valor para a variável que irá para o BD +1 (array inicial é 0 por isso +1)
+        //Validação de votos
+        atendimento = (v+1);
+
         //As notas são trazidas de um array chamado notas no array.xml
         Resources res = getResources();
         TypedArray icons = res.obtainTypedArray(R.array.notas);
@@ -200,14 +210,15 @@ public class Questionario extends AppCompatActivity {
         img.setBounds( 0, 0, 100, 100);
 
         //Set pro textView a nota
-        teste2.setCompoundDrawables( img, null, null, null );
+        txtAtendimento.setCompoundDrawables( img, null, null, null );
 
-       // teste2.setText(Integer.toString(notaAte));
+       // txtAtendimento.setText(Integer.toString(notaAte));
     }
 
     public void Resolvido(int v){
-
-        notaResolvido = v;
+        //Dando valor para a variável que irá para o BD +1 (array inicial é 0 por isso +1)
+        //Validação de votos
+        problema_resolvido = (v+1);
 
         //As notas são trazidas de um array chamado notas no array.xml
         Resources res = getResources();
@@ -218,45 +229,79 @@ public class Questionario extends AppCompatActivity {
         img.setBounds( 0, 0, 100, 100);
 
         //Set pro textView a nota
-        teste3.setCompoundDrawables( img, null, null, null );
+        txtProblema.setCompoundDrawables( img, null, null, null );
 
-        //teste3.setText(Integer.toString(notaResolvido));
+        //txtProblema.setText(Integer.toString(notaResolvido));
     }
 
 
 
     //Metodo para passar para a proxima tela
-       private View.OnClickListener onClickFinalizar() {
+    private View.OnClickListener onClickFinalizar() {
         return new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
 
-                if(notaTempo==-1||notaAte==-1||notaResolvido==-1){
+                if(tempo_espera==0||atendimento==0||problema_resolvido==0){
 
                     AlertDialog.Builder dialog = new AlertDialog.Builder(Questionario.this);
-                    dialog.setTitle("Atenção");
+                    dialog.setTitle("Atenção!");
                     dialog.setMessage("Você esqueceu de Selecionar uma das carinhas! :)");
                     dialog.setNeutralButton("OK",null);
                     dialog.show();
                 }else{
+                    //Adicionando nota no BD
+                    adicionarNota();
 
-                    //EditText editPin = (EditText) findViewById(R.id.editPin);
-                    //Integer pin = Integer.parseInt(editPin.getText().toString());
                     Intent intent = new Intent( getContext(),Finish.class);
-                    //Bundle params = new Bundle();
-                    //params.putInt("pin",pin);
-                    //intent.putExtras(params);
-                    //Pegar Notas
                     startActivity(intent);
                 }
-
-
-
-
             }
         };
     }
+
+
+    public void adicionarNota(){
+
+        final String t =  Integer.toString(tempo_espera).trim();
+        final String a = Integer.toString(atendimento).trim();
+        final String p = Integer.toString(problema_resolvido).trim();
+
+        class AdicionarNota extends AsyncTask<Void, Void, String>{
+
+            ProgressDialog loading;
+
+            @Override
+            protected void onPreExecute(){
+                super.onPreExecute();
+                loading = ProgressDialog.show(Questionario.this,"Registrando notas...","Espere por favor...",false,false);
+            }
+
+            @Override
+            protected void onPostExecute(String s){
+                super.onPostExecute(s);
+                loading.dismiss();
+                Toast.makeText(Questionario.this,s,Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            protected String doInBackground(Void... v) {
+                HashMap<String, String> params = new HashMap<>();
+                params.put(Configuracao.KEY_NOTA_TEMPO, t);
+                params.put(Configuracao.KEY_NOTA_ATENDIMENTO, a);
+                params.put(Configuracao.KEY_NOTA_PROBLEMA, p);
+
+                RequestHandler rh = new RequestHandler();
+                String res = rh.sendPostStringRequest(Configuracao.URL_ADICIONAR_NOTA, params);
+                return res;
+            }
+        }
+        AdicionarNota an = new AdicionarNota();
+        an.execute();
+    }
+
+
     private Context getContext(){
         return this;
     }

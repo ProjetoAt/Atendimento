@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
         Intent intent = getIntent();
 
+
+
         //inciializando objetos
         comecar = (Button) findViewById(R.id.comecar);
         editPin = (EditText) findViewById(R.id.editPin);
@@ -76,6 +78,10 @@ public class MainActivity extends AppCompatActivity{
             protected void onPostExecute(String s){
                 super.onPostExecute(s);
                 loading.dismiss();
+                s = s.substring(0,s.length()-1);
+                if(s.equals("{\"result\":[]}"))
+                    s = "{\"result\":[{\"codigo\":\"null\"}]}";
+
                 resultadoPIN(s);
             }
 

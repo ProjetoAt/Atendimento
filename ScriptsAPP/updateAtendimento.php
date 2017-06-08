@@ -13,8 +13,10 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 			'error' => null
 			);
 		try {
-			$stmt = $con->prepare("UPDATE atendimentos SET preenchido = 1, id_nota = '$id_nota' WHERE codigo = $codigo;");
-			$stmt->execute();
+			$rs = $con->prepare("UPDATE atendimentos SET preenchido = 1, id_nota = :idnota WHERE codigo = :codigo");
+			$rs->bindValue(":idnota",$id_nota);
+			$rs->bindValue(":codigo",$codigo);
+			$rs->execute();
 			
 		} catch (PDOException  $e) {
 			$result['error']=$e->errorInfo[1];

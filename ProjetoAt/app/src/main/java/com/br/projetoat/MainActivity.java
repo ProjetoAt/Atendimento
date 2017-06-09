@@ -19,24 +19,25 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity{
 
+    //Declarando os objetos
     private EditText editPin;
     private Button comecar;
 
+    //String que recebera o pin
     private String id_pin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Iniciando uma intent para a proxima tela
         Intent intent = getIntent();
 
-
-
-        //inciializando objetos
+        //Inciializando objetos
         comecar = (Button) findViewById(R.id.comecar);
         editPin = (EditText) findViewById(R.id.editPin);
         id_pin = intent.getStringExtra(Configuracao.PIN);
-
         comecar.setOnClickListener(onClickComecar());
     }
 
@@ -78,10 +79,12 @@ public class MainActivity extends AppCompatActivity{
             protected void onPostExecute(String s){
                 super.onPostExecute(s);
                 loading.dismiss();
+                //O valor que retorna do PHP é vazio com esse comandos estou validando o JSON vazio
                 s = s.substring(0,s.length()-1);
                 if(s.equals("{\"result\":[]}"))
                     s = "{\"result\":[{\"codigo\":\"null\"}]}";
 
+                //chamando o método para validar o PIN e tratar o erro
                 resultadoPIN(s);
             }
 
@@ -98,6 +101,7 @@ public class MainActivity extends AppCompatActivity{
 
     private void resultadoPIN(String json) {
         try {
+            //JSON retornado do PHP
             JSONObject jsonObject = new JSONObject(json);
             JSONArray result = jsonObject.getJSONArray(Configuracao.TAG_JSON_ARRAY);
             JSONObject c = result.getJSONObject(0);
@@ -105,12 +109,13 @@ public class MainActivity extends AppCompatActivity{
             //Atribuindo valor do Array para string
             String pindb = c.getString(Configuracao.TAG_ID);
 
-            //Se o valor do PIN for nulo no banco de dados o PIN nao esta registrado na tabela do banco
+            //Se o valor do PIN for nulo no banco de dados o PIN nao esta registrado na tabela do banco ou ja foi preenchido
             if(pindb.equals("null")){
-                editPin.setError("PIN incorreto!");
+                editPin.setError("PIN incorreto ou já preenchido!");
                 editPin.setFocusable(true);
             }else{
-                //Se retorna =! de nulo e que o PIN foi registrado no Banco de Dados
+                //Se retorna diferente de nulo é que o PIN foi registrado no Banco de Dados e não foi preenchido
+                //Cira uma Intent para passar o valor do PIN para outra tela para ser utilizada
                 Integer pin = Integer.parseInt(editPin.getText().toString());
                 Intent intent = new Intent( getContext(),Questionario.class);
                 Bundle params = new Bundle();

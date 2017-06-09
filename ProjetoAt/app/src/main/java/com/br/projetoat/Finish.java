@@ -12,6 +12,7 @@ public class Finish extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish);
 
+        //A aplicação volta pra primeira tela depois de um tempo
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

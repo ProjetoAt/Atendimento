@@ -1,7 +1,7 @@
 <?php
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
-	if (isset($_POST['id_nota']) and isset($_POST['codigo']) ) {
+	if (isset($_POST['id_nota']) and isset($_POST['codigo'])) {
 
 		require_once('conexaoDao.php');
 		$conexaoDao = new conexaoDao;

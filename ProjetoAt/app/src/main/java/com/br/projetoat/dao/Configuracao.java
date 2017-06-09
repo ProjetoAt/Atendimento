@@ -10,7 +10,8 @@ public class Configuracao {
     public static final String URL_UPDATE_ATENDIMENTO = host+"updateatendimento.php";
 
     //Constantes chaves que serao utilizados para enviar dados para os scripts php
-    public static final String KEY_PIN = "id";
+    public static final String KEY_NOTA_ID = "id_nota";
+    public static final String KEY_CODIGO = "codigo";
     public static final String KEY_NOTA_ATENDIMENTO = "atendente";
     public static final String KEY_NOTA_TEMPO = "tempo_espera";
     public static final String KEY_NOTA_PROBLEMA = "problema_resolvido";
@@ -18,7 +19,6 @@ public class Configuracao {
     //Tags JSON
     public static final String TAG_JSON_ARRAY = "result";
     public static final String TAG_ID = "codigo";
-    public static final String TAG_NOTA_ID = "id";
     public static final String TAG_ERROR = "error";
 
 

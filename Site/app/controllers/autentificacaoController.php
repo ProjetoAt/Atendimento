@@ -58,7 +58,7 @@ if (isset($_POST['verificar'])) {
 				$clientesModel->setIdCliente($_SESSION['cliente_id'] );
 				$clientesDao->alterarAtendente($clientesModel);
 			}else{
-				$clientesDao->adicionarAtendimento($clientesModel);
+				$clientesDao->adicionarCliente($clientesModel);
 			}
 			if ($result['error'] != null) {
 				$atendimentosDao = new atendimentosDao($con);
@@ -67,8 +67,7 @@ if (isset($_POST['verificar'])) {
 				$atendimentosModel->setClienteId($_SESSION['cliente_id']);
 				$atendimentosModel->setCodigo(rand(0,999999));
 				$atendimentosModel->setPreenchido(0);
-				$atendimentosDao->adicioanr
-
+				$atendimentosDao->adicionarAtendente($atendimentosModel);
 			}
 
 		}

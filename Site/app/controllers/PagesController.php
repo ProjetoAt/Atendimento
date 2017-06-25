@@ -10,7 +10,7 @@
 		function home($acao){
 			$title = $GLOBALS["title"];
 			$base = $GLOBALS["base"] ;
-			$folhaEstilo = '';
+			$folhaEstilo = 'login.css';
 			//include 'app/dao/conexaoDao.php';
 			include 'app/controllers/loginController.php';
 			include 'app/views/headerView.php';
@@ -20,7 +20,7 @@
 		function autentificacao($acao){
 			$title = $GLOBALS["title"];
 			$base = $GLOBALS["base"] ;
-			$folhaEstilo = '';
+			$folhaEstilo = 'autentificacao.css';
 			//include 'app/dao/conexaoDao.php';
 			include 'app/controllers/autentificacaoController.php';
 			include 'app/views/headerView.php';

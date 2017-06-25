@@ -41,18 +41,10 @@ if(isset($etapa) and $etapa == 1) { ?>
 					<label class="panel-data__label" for="ra">RA</label>
 					<input class="panel-data__input-text" id="ra" type="text" name="ra" value="<?=$clientesModel->getRa()?>">
 
-<<<<<<< HEAD
-				<input class="panel-data__submit" type="submit" name="enviar" value="Avançar">
-			</form>
-			<form method="POST">	
-				<input class="panel-data__voltar" type="submit" name="voltar" value="voltar">
-			</form>
-=======
 					<input class="panel-data__submit" type="submit" name="enviar" value="Avançar">
 					<input class="panel-data__voltar" type="submit" name="voltar" value="Finalizar">
 				</form>
 			</div>
->>>>>>> 07a6fca415d9c5cf0a6d728de48c22502b107de3
 		</div>
 	</main>
 <?php 
@@ -66,16 +58,10 @@ if(isset($etapa) and $etapa == 1) { ?>
 			<div class="panel-simple__body">		
 				<em class="panel-simple__input-text">4811</em>
 
-<<<<<<< HEAD
-			<form class="panel-simple__form" method="POST">	
-				<input class="panel-simple__submit" value="Finalizar" type="submit" name="finalizar">
-			</form>
-=======
 				<form class="panel-data__form" method="POST">	
 					<input class="panel-data__submit" type="submit" name="finalizar" value="Finalizar">
 				</form>
 			</div>
->>>>>>> 07a6fca415d9c5cf0a6d728de48c22502b107de3
 		</div>
 	</main>
 <?php

@@ -6,8 +6,8 @@ $(document).ready(function() {
             $('.js-telefone').mask(mask, telefoneConfig);
         }};
 
-        $('.js-cpf').mask('000.000.000-05');
-        $('.js-telefone').mask('000.000.000-05', telefoneConfig);
+        $('.js-cpf').mask('000.000.000-00');
+        $('.js-telefone').mask('000.000.000-00', telefoneConfig);
     }
 
     criaMascaras();

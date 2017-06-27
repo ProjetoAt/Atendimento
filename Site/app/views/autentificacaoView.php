@@ -56,7 +56,7 @@ if(isset($etapa) and $etapa == 1) { ?>
 				<h3 class="panel-simple__title">PIN</h3>
 			</div>
 			<div class="panel-simple__body">		
-				<em class="panel-simple__input-text">4811</em>
+				<em class="panel-simple__input-text"><?=$atendimentosModel->getCodigo()?></em>
 
 				<form class="panel-data__form" method="POST">	
 					<input class="panel-data__submit" type="submit" name="finalizar" value="Finalizar">

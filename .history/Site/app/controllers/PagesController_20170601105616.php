@@ -10,6 +10,7 @@
 		function home($acao){
 			$title = $GLOBALS["title"];
 			$base = $GLOBALS["base"] ;
+			$folhaEstilo = '';
 			//include 'app/dao/conexaoDao.php';
 			include 'app/controllers/loginController.php';
 			include 'app/views/headerView.php';
@@ -19,6 +20,7 @@
 		function autentificacao($acao){
 			$title = $GLOBALS["title"];
 			$base = $GLOBALS["base"] ;
+			$folhaEstilo = '';
 			//include 'app/dao/conexaoDao.php';
 			include 'app/controllers/autentificacaoController.php';
 			include 'app/views/headerView.php';
@@ -29,6 +31,7 @@
 			$acao = explode('/', $acao);
 			$title = $GLOBALS["title"];
 			$base = $GLOBALS["base"] ;
+			$folhaEstilo = '';
 			include 'app/controllers/statisticsController.php';
 			include 'app/views/headerView.php';
 	    	include 'app/views/footerView.php';
@@ -37,11 +40,13 @@
 		function logout($acao){
 			$title = $GLOBALS["title"];
 			$base = $GLOBALS["base"] ;
+			$folhaEstilo = '';
 			include 'app/controllers/logoutController.php';
 		}
 		
 		function e404($acao){
 			print_r($acao);
+			$folhaEstilo = '';
 			echo "PAGINA NAO EXISTE";
 		}
 		

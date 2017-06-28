@@ -11,6 +11,10 @@ class clientesDao{
 	}
 
 	public function adicionarCliente($cliente){
+		$result = array(
+			'error' => null,
+			'id' => null
+			);
 		try {
 			$stmt = $this->con->prepare("INSERT INTO clientes(nome,email,telefone,cpf,ra) VALUES(?,?,?,?,?)");
 			$stmt->bindValue(1,$cliente->getNome());
@@ -19,9 +23,11 @@ class clientesDao{
 			$stmt->bindValue(4,$cliente->getCpf());
 			$stmt->bindValue(5,$cliente->getRa());
 			$stmt->execute();
-		}catch (PDOException $e) {
-			return $e;
+			$result['id'] = $this->con->lastInsertId();
+		} catch (PDOException  $e) {
+			$result['error']=$e->errorInfo[1];
 		}
+		return $result;
 	}
 
 	public function removerCliente($id){
@@ -35,6 +41,9 @@ class clientesDao{
 	}	
 
 	public function alterarAtendente($cliente){
+		$result = array(
+			'error' => null
+			);
 		try {
 			$stmt = $this->con->prepare("UPDATE clientes SET nome = ?,email = ?,telefone = ?,cpf = ?,ra = ? WHERE id_cliente = ?");
 			$stmt->bindValue(1,$cliente->getNome());
@@ -44,74 +53,94 @@ class clientesDao{
 			$stmt->bindValue(5,$cliente->getRa());
 			$stmt->bindValue(6,$cliente->getIdCliente());
 			$stmt->execute();
-		} catch (PDOException $e) {
-			return $e;
+		
+		} catch (PDOException  $e) {
+			$result['error']=$e->errorInfo[1];
 		}
+		return $result;
 	}
 
 	public function buscarAll(){
-		//Consulta
-		$clientes = new ArrayObject(); 
-		$rs = $this->con->query("SELECT * FROM clientes");
-		$rss = $rs->fetchAll(PDO::FETCH_OBJ);
-		foreach ($rss as $res) {
-			$cliente = new clientesModel();
-			$cliente->setIdCliente($res->id_cliente);
-			$cliente->setNome($res->nome);
-			$cliente->setEmail($res->email);
-			$cliente->setTelefone($res->telefone);
-			$cliente->setCpf($res->cpf);
-			$cliente->setRa($res->ra);
-			$cliente->setDataCadastro($res->data_cadastro);
-			$clientes ->append($cliente);
+		$result = array(
+			'error' => null,
+			'data' => null
+			);
+		try {
+			$clientes = new ArrayObject(); 
+			$rs = $this->con->query("SELECT * FROM clientes");
+			$rss = $rs->fetchAll(PDO::FETCH_OBJ);
+			foreach ($rss as $res) {
+				$cliente = new clientesModel();
+				$cliente->setIdCliente($res->id_cliente);
+				$cliente->setNome($res->nome);
+				$cliente->setEmail($res->email);
+				$cliente->setTelefone($res->telefone);
+				$cliente->setCpf($res->cpf);
+				$cliente->setRa($res->ra);
+				$cliente->setDataCadastro($res->data_cadastro);
+				$clientes ->append($cliente);
+			}
+			$result['data'] = $clientes;
+		} catch (PDOException  $e) {
+			$result['error']=$e->errorInfo[1];
 		}
-
-		return $clientes;
+		return $result;
 	}
 
 	public function buscarId($id){
-		//Consulta
-		$cliente = new clientesModel();
-		$rs = $this->con->prepare("SELECT * FROM clientes where id_cliente =:id");
-		$rs->bindValue(':id', $id, PDO::PARAM_INT);
-		$rs->execute();
-		$res = $rs->fetch(PDO::FETCH_OBJ);
-		if ($res) {
-			$cliente->setIdCliente($res->id_cliente);
-			$cliente->setNome($res->nome);
-			$cliente->setEmail($res->email);
-			$cliente->setTelefone($res->telefone);
-			$cliente->setCpf($res->cpf);
-			$cliente->setRa($res->ra);
-			$cliente->setDataCadastro($res->data_cadastro);
-
-		}else{
-			echo "Registro Inexistente.";
+		$result = array(
+			'error' => null,
+			'data' => null
+			);
+		try {
+			$cliente = new clientesModel();
+			$rs = $this->con->prepare("SELECT * FROM clientes where id_cliente =:id");
+			$rs->bindValue(':id', $id, PDO::PARAM_INT);
+			$rs->execute();
+			$res = $rs->fetch(PDO::FETCH_OBJ);
+			if ($res) {
+				$cliente->setIdCliente($res->id_cliente);
+				$cliente->setNome($res->nome);
+				$cliente->setEmail($res->email);
+				$cliente->setTelefone($res->telefone);
+				$cliente->setCpf($res->cpf);
+				$cliente->setRa($res->ra);
+				$cliente->setDataCadastro($res->data_cadastro);
+			}
+			$result['data'] = $cliente;
+		} catch (PDOException  $e) {
+			$result['error']=$e->errorInfo[1];
 		}
-
-		return $cliente;
+		return $result;
 	}
+	
 
 
 	public function buscarCpf($cpf){
-		//Consulta
-		$cliente = new clientesModel();
-		$rs = $this->con->prepare("SELECT * FROM clientes where cpf =:cpf");
-		$rs->bindValue(':cpf', $cpf, PDO::PARAM_INT);
-		$rs->execute();
-		$res = $rs->fetch(PDO::FETCH_OBJ);
-		if ($res) {
-			$cliente->setIdCliente($res->id_cliente);
-			$cliente->setNome($res->nome);
-			$cliente->setEmail($res->email);
-			$cliente->setTelefone($res->telefone);
-			$cliente->setCpf($res->cpf);
-			$cliente->setRa($res->ra);
-			$cliente->setDataCadastro($res->data_cadastro);
-
+		$result = array(
+			'error' => null,
+			'data' => null
+			);
+		try {
+			$cliente = new clientesModel();
+			$rs = $this->con->prepare("SELECT * FROM clientes where cpf =:cpf");
+			$rs->bindValue(':cpf', $cpf, PDO::PARAM_INT);
+			$rs->execute();
+			$res = $rs->fetch(PDO::FETCH_OBJ);
+			if ($res) {
+				$cliente->setIdCliente($res->id_cliente);
+				$cliente->setNome($res->nome);
+				$cliente->setEmail($res->email);
+				$cliente->setTelefone($res->telefone);
+				$cliente->setCpf($res->cpf);
+				$cliente->setRa($res->ra);
+				$cliente->setDataCadastro($res->data_cadastro);
+			}
+			$result['data'] = $cliente;
+		} catch (PDOException  $e) {
+			$result['error']=$e->errorInfo[1];
 		}
-
-		return $cliente;
+		return $result;
 	}
 
 

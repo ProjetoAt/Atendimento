@@ -29,7 +29,8 @@ if (isset($_POST['enviar'])){
 
 // cria o hash da senha
     $passwordHash = make_hash($password);
-    $atendentesModel = $atendentesDao->buscarAllLogin($usuario,$passwordHash);
+    $result = $atendentesDao->buscarAllLogin($usuario,$passwordHash);
+    $atendentesModel = $result['data'];
     if (count($atendentesModel) <= 0){
       $erro = "Usuario e/ou Senha Incorretos";
     }else{

@@ -1,0 +1,25 @@
+{
+  "name": "atendimento",
+  "homepage": "https://github.com/ProjetoAt/Atendimento",
+  "authors": [
+    "vitebo"
+  ],
+  "description": "projeto academico",
+  "main": "gulpfile.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "stylus": "^0.54.5",
+    "jquery": "^3.2.1",
+    "normalize-css": "^7.0.0",
+    "font-awesome": "FortAwesome/Font-Awesome#^4.7.0",
+    "bootstrap": "v4.0.0-alpha.6"
+  }
+}

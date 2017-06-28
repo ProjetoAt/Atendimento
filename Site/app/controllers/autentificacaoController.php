@@ -1,4 +1,4 @@
-<?php 
+<?php
 //---------------------------//
 $centro = "app/views/autentificacaoView.php";
 
@@ -6,6 +6,7 @@ $centro = "app/views/autentificacaoView.php";
 if (session_status() !== PHP_SESSION_ACTIVE) {
 	session_start();
 }
+require_once 'app/core/vlogadoCore.php';
 $etapa = 1;
 if (isset($_POST['verificar'])) {
 	$etapa = 2;
@@ -19,14 +20,20 @@ if (isset($_POST['verificar'])) {
 	$clientesDao = new clientesDao($con);
 	$clientesModel = new clientesModel();
 	if ($cpf != '') {
-		$clientesModel = $clientesDao->buscarCPF($cpf);
-		if ($clientesModel->getNome() != '') {
-			//echo "completo";
+		$result = $clientesDao->buscarCpf($cpf);
+		if($result['error'] == null){	
+			$clientesModel = $result['data'];
+			if ($clientesModel->getIdCliente() != "") {
+				//echo "completo";
+			}else{
+				//echo "vazio";
+				$clientesModel->setCpf($cpf);
+			}
+			$_SESSION['cliente_id'] = $clientesModel->getIdCliente();
 		}else{
-			//echo "vazio";
-			$clientesModel->setCpf($cpf);
+			$etapa = 1;
+			$error = tratarError($result['error']);
 		}
-		$_SESSION['cliente_id'] = $clientesModel->getIdCliente();
 	}
 
 
@@ -52,17 +59,33 @@ if (isset($_POST['verificar'])) {
 	$clientesModel->setNome($nome);
 	$clientesModel->setEmail($email);
 	$clientesModel->setTelefone($telefone);
-		$clientesModel->setRa($ra); // Campo Opcional
-		if ($nome != '' and $email != '' and $telefone != '' and $cpf != '') {
-			if ($_SESSION['cliente_id'] != '') {
-				$clientesModel->setIdCliente($_SESSION['cliente_id'] );
-				echo $clientesDao->alterarAtendente($clientesModel);
-			}else{
-				echo $clientesDao->adicionarCliente($clientesModel);
-			}
-
+	$clientesModel->setRa($ra); // Campo Opcional
+	if ($nome != '' and $email != '' and $telefone != '' and $cpf != '') {
+		if ($_SESSION['cliente_id'] != '') {
+			$clientesModel->setIdCliente($_SESSION['cliente_id'] );
+			$result = $clientesDao->alterarAtendente($clientesModel);
+		}else{
+			$result = $clientesDao->adicionarCliente($clientesModel);
 		}
-		unset($_POST);
+		if ($result['error'] == null) {
+			require_once 'app/dao/atendimentosDao.php';
+			$atendimentosDao = new atendimentosDao($con);
+			$atendimentosModel = new atendimentosModel();
+			$atendimentosModel->setAtendenteId($_SESSION['atendente_id']);
+			$atendimentosModel->setClienteId($_SESSION['cliente_id']);
+			$atendimentosModel->setCodigo(rand(0,999999));
+			$result = $atendimentosDao->adicionarAtendimento($atendimentosModel);
+			if ($result['error'] != null) {
+			$etapa = 2;
+			$error = tratarError($result['error']);
+			}
+		}else{
+			$etapa = 2;
+			$error = tratarError($result['error']);
+		}
+
+	}
+	unset($_POST);
 	}elseif(isset($_POST['finalizar'])) {
 		$etapa =1;
 		
@@ -72,6 +95,4 @@ if (isset($_POST['verificar'])) {
 		$cpf = (isset($_SESSION['cliente_cpf'])) ? $_SESSION['cliente_cpf'] : '' ;
 		unset($_POST);
 	}
-
-
 	?>

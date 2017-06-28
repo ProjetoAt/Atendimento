@@ -31,7 +31,8 @@ $ npm install
 ## Tarefas automatizadas
 
 - `$ gulp stylus`: Compila, concatena e minifica todos arquivos .styl.
-- `$ gulp watch`: Escuta mudança nos arquivos .styl para comilar automaticamente.
+- `$ gulp concat`: Concatena e minifica todos arquivos .js.
+- `$ gulp watch`: Escuta mudança nos arquivos para compilar automaticamente.
 
 ## Contribuindo com o projeto
 

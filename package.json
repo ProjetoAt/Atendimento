@@ -1,8 +1,14 @@
 {
   "name": "atendimento",
   "version": "0.1.0",
-  "description": "projeto para auxiliar no atendimento da faculdade",
+  "description": "Projeto academico",
   "main": "gulpfile.js",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-dest": "^0.2.3",
+    "gulp-stylus": "^2.6.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,14 +16,10 @@
     "type": "git",
     "url": "git+https://github.com/ProjetoAt/Atendimento.git"
   },
-  "author": "projetoat",
+  "author": "vitebo",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ProjetoAt/Atendimento/issues"
   },
-  "homepage": "https://github.com/ProjetoAt/Atendimento#readme",
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-stylus": "^2.6.0"
-  }
+  "homepage": "https://github.com/ProjetoAt/Atendimento#readme"
 }

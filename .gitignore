@@ -1,4 +1,5 @@
 node_modules/
+bower_components/
 npm-debug.log
 
 #built arquivos de aplicativos 
@@ -15,7 +16,7 @@ npm-debug.log
 bin/
 gen/
 
-# Arquivos de configuração local (sdk path, etc)
+# Arquivos de configuraï¿½ï¿½o local (sdk path, etc)
 local.properties
 
 # Android Studio

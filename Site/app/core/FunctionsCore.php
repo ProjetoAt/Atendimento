@@ -67,5 +67,9 @@ function isPossible(){
     return false;
 }
 
+function tratarError($error){
+    return $error;
+}
+
 
 ?>

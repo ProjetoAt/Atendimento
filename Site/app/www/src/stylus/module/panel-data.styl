@@ -15,6 +15,7 @@
 	color $bg
 	font-family inherit
 	font-size 18px
+	font-weight normal
 
 .panel-data__body 
 	display flex
@@ -43,6 +44,9 @@
 	width 100%
 	opacity .8
 	
+.panel-data__input-text--error
+	border-color $primary
+
 .panel-data__input-text:focus 
 	outline thick
 
@@ -64,7 +68,9 @@
 	cursor pointer
 	
 .panel-data__voltar 
+	background none
 	background-image url("../images/btn-voltar.png")
+	border none
 	height 32px
 	left -50px
 	overflow hidden

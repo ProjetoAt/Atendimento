@@ -10,6 +10,10 @@ class atendentesDao{
 	}
 
 	public function adicionarAtendente($atendente){
+		$result = array(
+			'error' => null,
+			'id' => null
+			);
 		try {
 			$stmt = $this->con->prepare("INSERT INTO atendentes(nome,usuario,senha,nivel) VALUES(?,?,?,?)");
 			$stmt->bindValue(1,$atendente->getNome());
@@ -17,9 +21,11 @@ class atendentesDao{
 			$stmt->bindValue(3,$atendente->getSenha());
 			$stmt->bindValue(4,$atendente->getNivel());
 			$stmt->execute();
-		}catch (PDOException $e) {
-			return $e;
+			$result['id'] = $this->con->lastInsertId();
+		} catch (PDOException  $e) {
+			$result['error']=$e->errorInfo[1];
 		}
+		return $result;
 	}
 
 	public function removerAtendente($id){
@@ -33,6 +39,9 @@ class atendentesDao{
 	}	
 
 	public function alterarAtendente($atendente){
+		$result = array(
+			'error' => null
+			);
 		try {
 			$stmt = $this->con->prepare("UPDATE usuarios SET nome = ?,usuario = ?,senha = ?,nivel = ? WHERE id_atendente = ?");
 			$stmt->bindValue(1,$atendente->getNome());
@@ -41,72 +50,91 @@ class atendentesDao{
 			$stmt->bindValue(4,$atendente->getNivel());
 			$stmt->bindValue(5,$atendente->getIdUsuario());
 			$stmt->execute();
-		} catch (PDOException $e) {
-			return $e;
+		} catch (PDOException  $e) {
+			$result['error']=$e->errorInfo[1];
 		}
+		return $result;
 	}
 
 	public function buscarAll(){
-		//Consulta
-		$atendentes = new ArrayObject(); 
-		$rs = $this->con->query("SELECT * FROM atendentes");
-		$rss = $rs->fetchAll(PDO::FETCH_OBJ);
-		foreach ($rss as $res) {
-			$atendente = new atendentesModel();
-			$atendente->setIdAtendente($res->id_atendente);
-			$atendente->setNome($res->nome);
-			$atendente->setUsuario($res->usuario);
-			$atendente->setSenha($res->senha);
-			$atendente->setNivel($res->nivel);
-			$atendente->setDataCadastro($res->data_cadastro);
-			$atendentes ->append($atendente);
+		$result = array(
+			'error' => null,
+			'data' => null
+			);
+		try {
+			$atendentes = new ArrayObject(); 
+			$rs = $this->con->query("SELECT * FROM atendentes");
+			$rss = $rs->fetchAll(PDO::FETCH_OBJ);
+			foreach ($rss as $res) {
+				$atendente = new atendentesModel();
+				$atendente->setIdAtendente($res->id_atendente);
+				$atendente->setNome($res->nome);
+				$atendente->setUsuario($res->usuario);
+				$atendente->setSenha($res->senha);
+				$atendente->setNivel($res->nivel);
+				$atendente->setDataCadastro($res->data_cadastro);
+				$atendentes ->append($atendente);
+			}
+				$result['data'] = $atendentes;
+		} catch (PDOException  $e) {
+			$result['error']=$e->errorInfo[1];
 		}
-
-		return $atendentes;
+		return $result;
 	}
 
 	public function buscarAllLogin($usuario,$senha){
-		//Consulta
-		$atendentes = new ArrayObject(); 
-		$rs = $this->con->prepare("SELECT * FROM atendentes WHERE usuario = :usuario and senha = :senha");
-		$rs->bindParam(':usuario', $usuario);
-		$rs->bindParam(':senha', $senha);
-		$rs->execute();
-		$rss = $rs->fetchAll(PDO::FETCH_OBJ);
-		foreach ($rss as $res) {
-			$atendente = new atendentesModel();
-			$atendente->setIdAtendente($res->id_atendente);
-			$atendente->setNome($res->nome);
-			$atendente->setUsuario($res->usuario);
-			$atendente->setSenha($res->senha);
-			$atendente->setNivel($res->nivel);
-			$atendente->setDataCadastro($res->data_cadastro);
-			$atendentes ->append($atendente);
+		$result = array(
+			'error' => null,
+			'data' => null
+			);
+		try {
+			$atendentes = new ArrayObject(); 
+			$rs = $this->con->prepare("SELECT * FROM atendentes WHERE usuario = :usuario and senha = :senha");
+			$rs->bindParam(':usuario', $usuario);
+			$rs->bindParam(':senha', $senha);
+			$rs->execute();
+			$rss = $rs->fetchAll(PDO::FETCH_OBJ);
+			foreach ($rss as $res) {
+				$atendente = new atendentesModel();
+				$atendente->setIdAtendente($res->id_atendente);
+				$atendente->setNome($res->nome);
+				$atendente->setUsuario($res->usuario);
+				$atendente->setSenha($res->senha);
+				$atendente->setNivel($res->nivel);
+				$atendente->setDataCadastro($res->data_cadastro);
+				$atendentes ->append($atendente);
+			}
+				$result['data'] = $atendentes;
+		} catch (PDOException  $e) {
+			$result['error']=$e->errorInfo[1];
 		}
-
-		return $atendentes;
+		return $result;
 	}
 
 	public function buscarId($id){
-		//Consulta
-		$atendente = new atendentesModel();
-		$rs = $this->con->prepare("SELECT * FROM atendente where id_atendente =:id");
-		$rs->bindValue(':id', $id, PDO::PARAM_INT);
-		$rs->execute();
-		$res = $rs->fetch(PDO::FETCH_OBJ);
-		if ($res) {
-			$atendente->setIdAtendente($res->id_atendente);
-			$atendente->setNome($res->nome);
-			$atendente->setUsuario($res->usuario);
-			$atendente->setSenha($res->senha);
-			$atendente->setNivel($res->nivel);
-			$atendente->setDataCadastro($res->data_cadastro);
-
-		}else{
-			echo "Registro Inexistente.";
+		$result = array(
+			'error' => null,
+			'data' => null
+			);
+		try {
+			$atendente = new atendentesModel();
+			$rs = $this->con->prepare("SELECT * FROM atendente where id_atendente =:id");
+			$rs->bindValue(':id', $id, PDO::PARAM_INT);
+			$rs->execute();
+			$res = $rs->fetch(PDO::FETCH_OBJ);
+			if ($res) {
+				$atendente->setIdAtendente($res->id_atendente);
+				$atendente->setNome($res->nome);
+				$atendente->setUsuario($res->usuario);
+				$atendente->setSenha($res->senha);
+				$atendente->setNivel($res->nivel);
+				$atendente->setDataCadastro($res->data_cadastro);
+			}
+				$result['data'] = $atendente;
+		} catch (PDOException  $e) {
+			$result['error']=$e->errorInfo[1];
 		}
-
-		return $atendente;
+		return $result;
 	}
 
 

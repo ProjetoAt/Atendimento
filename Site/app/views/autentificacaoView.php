@@ -9,7 +9,7 @@ if(isset($etapa) and $etapa == 1) { ?>
 			<div class="panel-simple__body">		
 				<form class="panel-simple__form" method="POST">
 					<label class="panel-simple__label" for="cpf">CPF</label>
-					<input class="panel-simple__input-text" id="cpf" type="text" name="cpf" placeholder="CPF" <?= (isset($cpf)) ? 'value="'.$cpf.'"' : '' ;?>>
+					<input class="js-cpf panel-simple__input-text" id="cpf" type="text" name="cpf" require placeholder="CPF" <?= (isset($cpf)) ? 'value="'.$cpf.'"' : '' ;?>>
 
 					<input class="panel-simple__submit" type="submit" name="verificar" value="Avançar">
 				</form>
@@ -27,19 +27,19 @@ if(isset($etapa) and $etapa == 1) { ?>
 			<div class="panel-data__body">		
 				<form class="panel-data__form" method="POST">				
 					<label class="panel-data__label" for="cpf">CPF</label>
-					<input class="panel-data__input-text" id="cpf" type="text" name="cpf" value="<?=$clientesModel->getCpf()?>">
+					<input class="js-cpf panel-data__input-text" require id="cpf" type="text" name="cpf" value="<?=$clientesModel->getCpf()?>">
 
 					<label class="panel-data__label" for="name">Nome</label>
-					<input class="panel-data__input-text" id="name" type="text" name="nome" value="<?=$clientesModel->getNome()?>">
+					<input class="panel-data__input-text" id="name" require type="text" name="nome" value="<?=$clientesModel->getNome()?>">
 
 					<label class="panel-data__label" for="email">E-mail</label>
-					<input class="panel-data__input-text" id="email" type="email" name="email" value="<?=$clientesModel->getEmail()?>">
+					<input class="panel-data__input-text" id="email" require type="email" name="email" value="<?=$clientesModel->getEmail()?>">
 
 					<label class="panel-data__label" for="tel">Telefone</label>
-					<input class="panel-data__input-text" id="tel" type="text" name="telefone" value="<?=$clientesModel->getTelefone()?>">
+					<input class="js-telefone panel-data__input-text" require id="tel" type="text" name="telefone" value="<?=$clientesModel->getTelefone()?>">
 
 					<label class="panel-data__label" for="ra">RA</label>
-					<input class="panel-data__input-text" id="ra" type="text" name="ra" value="<?=$clientesModel->getRa()?>">
+					<input class="js-ra panel-data__input-text" id="ra" require type="text" name="ra" value="<?=$clientesModel->getRa()?>">
 
 					<input class="panel-data__submit" type="submit" name="enviar" value="Avançar">
 					<input class="panel-data__voltar" type="submit" name="voltar" value="Finalizar">
@@ -56,7 +56,7 @@ if(isset($etapa) and $etapa == 1) { ?>
 				<h3 class="panel-simple__title">PIN</h3>
 			</div>
 			<div class="panel-simple__body">		
-				<em class="panel-simple__input-text">4811</em>
+				<em class="panel-simple__input-text"><?=$atendimentosModel->getCodigo()?></em>
 
 				<form class="panel-data__form" method="POST">	
 					<input class="panel-data__submit" type="submit" name="finalizar" value="Finalizar">
@@ -67,3 +67,7 @@ if(isset($etapa) and $etapa == 1) { ?>
 <?php
 }
 ?>
+
+<script src="<?=$base ?>app/www/out/js/jquery.min.js"></script>
+<script src="<?=$base ?>app/www/out/js/jquery.mask.min.js"></script>
+<script src="<?=$base ?>app/www/out/js/main.js"></script>

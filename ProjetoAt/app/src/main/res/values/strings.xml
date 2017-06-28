@@ -9,5 +9,7 @@
     <string name="atendente">Atendente </string>
     <string name="problema">Problema Resolvido </string>
     <string name="msg"> Obrigado(a)!</string>
-    <string name="snotas">Suas notas:</string>
+    <string name="snotas">Suas notas</string>
+    <string name="sobre">Sobre</string>
+
 </resources>

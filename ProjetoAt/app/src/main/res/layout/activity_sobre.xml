@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical"
+    tools:context="com.br.projetoat.Sobre"
+    android:background="@android:color/background_light">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:layout_marginTop="0dp">
+
+
+    <TextView
+        android:id="@+id/desenvolvedores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text=" Desenvolvedores"
+        android:textColor="@color/colorAccent"
+        android:textSize="25dp" />
+        <TextView
+            android:id="@+id/textView1"
+            android:gravity="center"
+            android:layout_marginBottom="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text=" André Vitebo vitebo@hotmail.com" />
+        <TextView
+            android:id="@+id/textView2"
+            android:gravity="center"
+            android:layout_marginBottom="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text=" Geisibel Ramos geisibel.03@gmail.com" />
+        <TextView
+            android:id="@+id/textView3"
+            android:gravity="center"
+            android:layout_marginBottom="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text=" Givanildo Silva giva_reis@hotmail.com" />
+        <TextView
+            android:id="@+id/textView4"
+            android:gravity="center"
+            android:layout_marginBottom="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text=" Lucas do Vale lucas.vale.oli@gmail.com" />
+        <TextView
+            android:id="@+id/textView5"
+            android:gravity="center"
+            android:layout_marginBottom="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text=" Luiz Otávio luiz.otavior18@gmail.com" />
+        <TextView
+            android:id="@+id/textView6"
+            android:gravity="center"
+            android:layout_marginBottom="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:text=" Matheus Souza matheussouzadev@gmail.com" />
+
+    </LinearLayout>
+</LinearLayout>

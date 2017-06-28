@@ -3,8 +3,8 @@
 	namespace app\controllers;
 	
 	$title = "Projeto atendimento";
-	//$base = 'http://localhost/Atendimento/Site/';
-	$base = 'http://localhost/Projetos/Atendimento/Site/'; //Luiz
+	$base = 'http://localhost/Atendimento/Site/';
+	//$base = 'http://localhost/Projetos/Atendimento/Site/'; //Luiz
 	//$base = 'http://'.$_SERVER['HTTP_HOST'].'/';
 	//if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
     //    $base = "https://";

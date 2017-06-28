@@ -6,6 +6,13 @@
 	//$base = 'http://localhost/Atendimento/Site/';
 	$base = 'http://localhost/Projetos/Atendimento/Site/'; //Luiz
 	//$base = 'http://'.$_SERVER['HTTP_HOST'].'/';
+	//if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+    //    $base = "https://";
+    //} else {
+    //    $base = "http://";
+    //    header("location: https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+    //}
+    //$base = $base.$_SERVER['HTTP_HOST'].'/';
 	class pagesController{
 
 		function home($acao){

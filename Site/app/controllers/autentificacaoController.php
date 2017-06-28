@@ -6,6 +6,7 @@ $centro = "app/views/autentificacaoView.php";
 if (session_status() !== PHP_SESSION_ACTIVE) {
 	session_start();
 }
+require_once 'app/core/vlogadoCore.php';
 $etapa = 1;
 if (isset($_POST['verificar'])) {
 	$etapa = 2;

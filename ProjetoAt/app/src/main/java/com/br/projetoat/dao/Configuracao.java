@@ -2,7 +2,7 @@ package com.br.projetoat.dao;
 
 public class Configuracao {
     //Endereço que vai ser hospedado o Script php
-    public static final String host = "http://matheuswebbilac.esy.es/";
+    public static final String host = "https://atendimento.centralnovel.com.br/";
 
     //Endereços dos scripts para fazer o CRUD
     public static final String URL_VALIDAR_PIN = host+"validarpin.php?id=";

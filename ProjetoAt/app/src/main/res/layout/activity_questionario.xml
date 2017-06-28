@@ -29,13 +29,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-<<<<<<< HEAD
-
         android:layout_marginTop="0dp"
-=======
-        android:layout_marginBottom="20dp"
->>>>>>> ec09ba764554e2abd2a0280fea4a88aa1f0af4ef
-        >
+        android:layout_marginBottom="20dp">
 
 
         <Button

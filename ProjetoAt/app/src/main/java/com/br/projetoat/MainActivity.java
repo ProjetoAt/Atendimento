@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity{
     //Declarando os objetos
     private EditText editPin;
     private Button comecar;
+    private Button sobre;
 
     //String que recebera o pin
     private String id_pin;
@@ -38,7 +39,16 @@ public class MainActivity extends AppCompatActivity{
         comecar = (Button) findViewById(R.id.comecar);
         editPin = (EditText) findViewById(R.id.editPin);
         id_pin = intent.getStringExtra(Configuracao.PIN);
+        sobre = (Button) findViewById(R.id.sobre);
+
         comecar.setOnClickListener(onClickComecar());
+        sobre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Sobre.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private View.OnClickListener onClickComecar() {

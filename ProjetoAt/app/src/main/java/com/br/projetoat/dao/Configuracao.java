@@ -2,12 +2,12 @@ package com.br.projetoat.dao;
 
 public class Configuracao {
     //Endereço que vai ser hospedado o Script php
-    public static final String host = "https://atendimento.centralnovel.com.br/";
+    public static final String host = "http://atendimentobilac.000webhostapp.com/";
 
     //Endereços dos scripts para fazer o CRUD
-    public static final String URL_VALIDAR_PIN = host+"validarpin.php?id=";
-    public static final String URL_ADICIONAR_NOTA = host+"adicionarnota.php";
-    public static final String URL_UPDATE_ATENDIMENTO = host+"updateatendimento.php";
+    public static final String URL_VALIDAR_PIN = host+"validarpin?id=";
+    public static final String URL_ADICIONAR_NOTA = host+"adicionarnota";
+    public static final String URL_UPDATE_ATENDIMENTO = host+"updateatendimento";
 
     //Constantes chaves que serao utilizados para enviar dados para os scripts php
     public static final String KEY_NOTA_ID = "id_nota";

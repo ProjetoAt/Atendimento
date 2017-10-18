@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class RequestHandler {
 
-    public String sendPostStringRequest(String requestURL, HashMap<String, String> postDataParams) {
+    /*public String sendPostStringRequest(String requestURL, HashMap<String, String> postDataParams) {
         URL url;
 
         StringBuilder sb = new StringBuilder();
@@ -54,13 +54,38 @@ public class RequestHandler {
             e.printStackTrace();
         }
         return sb.toString();
-    }
+    }*/
     
     public String sendGetRequestParams(String requestURL, String id){
         StringBuilder sb = new StringBuilder();
 
         try{
             URL url = new URL(requestURL+id);
+
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+            String s;
+
+            while ((s=br.readLine())!= null){
+                sb.append(s+"\n");
+            }
+
+        }catch (Exception e){
+        }
+        return sb.toString();
+    }
+
+    public String sendGetRequestParamsQuest(String requestURL, String [] params){
+        StringBuilder sb = new StringBuilder();
+
+        try{
+
+            for(int i = 0; i < params.length; i++){
+                    requestURL = requestURL + params[i];
+            }
+
+            URL url = new URL(requestURL);
 
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));

@@ -347,12 +347,12 @@ public class Questionario extends AppCompatActivity {
 
             @Override
             protected String doInBackground(Void... v) {
-                HashMap<String, String> params = new HashMap<>();
-                params.put(Configuracao.KEY_NOTA_ID, id_nota);
-                params.put(Configuracao.KEY_CODIGO, codigo);
+                String [] params = new String[3];
+                params[0] = (Configuracao.KEY_NOTA_ID + id_nota);
+                params[1] = (Configuracao.KEY_CODIGO + codigo);
 
                 RequestHandler rh = new RequestHandler();
-                String res = rh.sendPostStringRequest(Configuracao.URL_UPDATE_ATENDIMENTO, params);
+                String res = rh.sendGetRequestParamsQuest(Configuracao.URL_UPDATE_ATENDIMENTO, params);
                 return res;
             }
         }
@@ -387,13 +387,13 @@ public class Questionario extends AppCompatActivity {
 
             @Override
             protected String doInBackground(Void... v) {
-                HashMap<String, String> params = new HashMap<>();
-                params.put(Configuracao.KEY_NOTA_TEMPO, t);
-                params.put(Configuracao.KEY_NOTA_ATENDIMENTO, a);
-                params.put(Configuracao.KEY_NOTA_PROBLEMA, p);
+                String [] params = new String[3];
+                params[0] = (Configuracao.KEY_NOTA_TEMPO +"="+ t +"&");
+                params[1] = (Configuracao.KEY_NOTA_ATENDIMENTO +"="+ a + "&");
+                params[2] = (Configuracao.KEY_NOTA_PROBLEMA + p);
 
                 RequestHandler rh = new RequestHandler();
-                String res = rh.sendPostStringRequest(Configuracao.URL_ADICIONAR_NOTA, params);
+                String res = rh.sendGetRequestParamsQuest(Configuracao.URL_ADICIONAR_NOTA, params);
                 return res;
             }
         }

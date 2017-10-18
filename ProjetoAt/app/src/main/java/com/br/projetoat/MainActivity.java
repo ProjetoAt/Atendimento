@@ -89,11 +89,6 @@ public class MainActivity extends AppCompatActivity{
             protected void onPostExecute(String s){
                 super.onPostExecute(s);
                 loading.dismiss();
-                //O valor que retorna do PHP é vazio com esse comandos estou validando o JSON vazio
-                s = s.substring(0,s.length()-1);
-                if(s.equals("{\"result\":[]}"))
-                    s = "{\"result\":[{\"codigo\":\"null\"}]}";
-
                 //chamando o método para validar o PIN e tratar o erro
                 resultadoPIN(s);
             }
@@ -113,14 +108,10 @@ public class MainActivity extends AppCompatActivity{
         try {
             //JSON retornado do PHP
             JSONObject jsonObject = new JSONObject(json);
-            JSONArray result = jsonObject.getJSONArray(Configuracao.TAG_JSON_ARRAY);
-            JSONObject c = result.getJSONObject(0);
-
-            //Atribuindo valor do Array para string
-            String pindb = c.getString(Configuracao.TAG_ID);
+            String pindb = (String) jsonObject.get("result");
 
             //Se o valor do PIN for nulo no banco de dados o PIN nao esta registrado na tabela do banco ou ja foi preenchido
-            if(pindb.equals("null")){
+            if(pindb.equals("0")){
                 editPin.setError("PIN incorreto ou já preenchido!");
                 editPin.setFocusable(true);
             }else{

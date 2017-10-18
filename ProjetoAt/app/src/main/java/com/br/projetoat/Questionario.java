@@ -347,9 +347,9 @@ public class Questionario extends AppCompatActivity {
 
             @Override
             protected String doInBackground(Void... v) {
-                String [] params = new String[3];
-                params[0] = (Configuracao.KEY_NOTA_ID + id_nota);
-                params[1] = (Configuracao.KEY_CODIGO + codigo);
+                String [] params = new String[2];
+                params[0] = (Configuracao.KEY_NOTA_ID +"="+ id_nota +"&" );
+                params[1] = (Configuracao.KEY_CODIGO +"="+ codigo);
 
                 RequestHandler rh = new RequestHandler();
                 String res = rh.sendGetRequestParamsQuest(Configuracao.URL_UPDATE_ATENDIMENTO, params);
@@ -390,7 +390,7 @@ public class Questionario extends AppCompatActivity {
                 String [] params = new String[3];
                 params[0] = (Configuracao.KEY_NOTA_TEMPO +"="+ t +"&");
                 params[1] = (Configuracao.KEY_NOTA_ATENDIMENTO +"="+ a + "&");
-                params[2] = (Configuracao.KEY_NOTA_PROBLEMA + p);
+                params[2] = (Configuracao.KEY_NOTA_PROBLEMA +"="+ p);
 
                 RequestHandler rh = new RequestHandler();
                 String res = rh.sendGetRequestParamsQuest(Configuracao.URL_ADICIONAR_NOTA, params);
